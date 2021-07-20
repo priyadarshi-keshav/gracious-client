@@ -50,8 +50,8 @@ export const razorPayPayment = () => async (dispatch, getState) => {
                     key_id: "rzp_test_OySIcjLvv0NCGK",
                     amount: data.amount,
                     currency: "INR",
-                    name: "CART HUNT",
-                    description: "Complete your order to pay the amount.",
+                    name: "GraciousMade",
+                    description: "Complete your order.",
                     image: "https://forever21.imgix.net/img/app/product/4/466785-3276207.jpg?w=412&auto=format",
                     order_id: data.id,
                     handler: async (response) => {
@@ -95,7 +95,7 @@ export const razorPayPayment = () => async (dispatch, getState) => {
                         "address": Cart.shippingAddress
                     },
                     theme: {
-                        "color": '#4d05e8'
+                        "color": '#3db997'
                     }
                 }
 
