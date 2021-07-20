@@ -19,7 +19,6 @@ const AdminListProduct = ({ history, match, location }) => {
 
     useEffect(() => {
         const category_id = match.params.categoryId
-        console.log(location)
         setCategoryName(location.search.split('?')[1])
 
         if (!profile) {

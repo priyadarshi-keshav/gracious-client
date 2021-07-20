@@ -81,10 +81,11 @@ const AdminProductDetails = ({ match, history }) => {
                                         </Form.Group>
                                     </Col>
                                     <Col>
-                                        <Form.Group>Quantity*
-                                            <input defaultValue={productDetails.quantity_available} className="form-control" type="number" name="quantity_available" onChange={handleChange} required /><br />
+                                        <Form.Group>Offer Price
+                                            <input defaultValue={productDetails.offerprice} className="form-control" type="number" name="offerprice" onChange={handleChange} required />
                                         </Form.Group>
                                     </Col>
+                                   
                                 </Row>
                                 <Row>
                                     <Col>
@@ -110,6 +111,11 @@ const AdminProductDetails = ({ match, history }) => {
 
                                 <Row>
                                     <Col md={4}>
+                                   
+                                        <Form.Group>Quantity*
+                                            <input defaultValue={productDetails.quantity_available} className="form-control" type="number" name="quantity_available" onChange={handleChange} required /><br />
+                                        </Form.Group>
+                                   
                                         <Form.Group>Select Category*
                                             {
                                                 categoryLoading ? <div><Spinner animation="border" /></div> :

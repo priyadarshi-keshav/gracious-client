@@ -20,11 +20,11 @@ const DisProductDetails = (props) => {
     const { profile } = useSelector(state => state.UserLogin)
     const { addCartLoading, addCartSuccess, addCartError } = useSelector(state => state.AuthCart)
 
-    useEffect(()=>{
+    useEffect(() => {
         return () => (
             dispatch(resetCartMessages())
         )
-    },[])
+    }, [])
 
     const AddToCart = async (productData) => {
         if (profile) {
@@ -40,7 +40,7 @@ const DisProductDetails = (props) => {
         if (data) {
             return (
                 <Row>
-                    <Col md={6}>
+                    <Col md={6} data-aos="fade-up">
                         <Carousel>
                             <Carousel.Item>
                                 <img
@@ -68,12 +68,30 @@ const DisProductDetails = (props) => {
                                 <p className="heading">{data.name}</p>
                             </ListGroup.Item>
 
-                            <ListGroup.Item>
-                                <Ratings rating={data.rating} numReview={data.reviews && data.reviews.length} />
-                            </ListGroup.Item>
+                            {
+                                data.rating > 0 &&
+                                <ListGroup.Item>
+                                    <Ratings rating={data.rating} numReview={data.reviews && data.reviews.length} />
+                                </ListGroup.Item>
+                            }
 
                             <ListGroup.Item>
-                                <p className='subheading'>Rs  {data.price}</p>
+                                {
+                                    data.offerprice ?
+                                        <p className='subheading'>
+                                            ₹ {data.offerprice}
+                                            <p>
+                                                <span style={{ fontSize: '0.7em', textDecoration: 'line-through' }}>₹ {data.price}</span> <span style={{ color: 'green', fontSize: '1em' }}>
+                                                    {
+                                                        Math.round((data.price - data.offerprice) / data.price * 100)
+                                                    }% off
+                                                </span>
+                                            </p>
+
+                                        </p>
+                                        :
+                                        <p className='subheading'>₹ {data.price}</p>
+                                }
                                 <p>{data.quantity_available > 0 ? 'In Stock' : 'Out Of Stock'}</p>
                                 <p>
 
@@ -99,16 +117,16 @@ const DisProductDetails = (props) => {
                                     {addCartError && <Message variant='danger'>{addCartError}</Message>}
                                     {
                                         cartItems && cartItems.find(items => items._id === data._id) || authCartItems && authCartItems.find(items => items.product_id === data._id) ?
-                                            <Link to="/cart"><button style={{width:'100%'}} className="page_btn">Go to cart</button></Link>
+                                            <Link to="/cart"><button style={{ width: '100%' }} className="page_btn">Go to cart</button></Link>
                                             :
-                                            addCartLoading ? <button style={{width:'100%'}} className="page_btn">
+                                            addCartLoading ? <button style={{ width: '100%' }} className="page_btn">
                                                 <Spinner animation="border" />
                                             </button>
                                                 :
                                                 data.quantity_available <= 0 ?
-                                                    <button style={{width:'100%', backgroundColor:'magenta'}} className="page_btn">Out Of Stock</button>
+                                                    <button style={{ width: '100%', backgroundColor: 'magenta' }} className="page_btn">Out Of Stock</button>
                                                     :
-                                                    <button style={{width:'100%'}} onClick={() => AddToCart(data)} className="page_btn">Add to cart</button>
+                                                    <button style={{ width: '100%' }} onClick={() => AddToCart(data)} className="page_btn">Add to cart</button>
                                     }
                                 </ListGroup.Item>
                             </ListGroup>

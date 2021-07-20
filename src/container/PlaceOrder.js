@@ -39,7 +39,7 @@ const PlaceOrder = ({ history }) => {
 
         authcart.itemsPrice = authCartItems.map(item => item.price * item.quantity_selected).reduce((total, price) => total + price)
 
-        authcart.deliveryPrice = authcart.itemsPrice > 200 ? 0 : 80
+        authcart.deliveryPrice = authcart.itemsPrice > 500 ? 0 : 80
 
         authcart.totalPrice = authcart.itemsPrice + authcart.deliveryPrice
     }
@@ -63,7 +63,7 @@ const PlaceOrder = ({ history }) => {
 
                         <Col md={8}>
                             <ListGroup variant='flush'>
-                                {loading && <Loader />}
+                                {/* {loading && <Loader />} */}
                                 {error && <Message variant='danger'>{error}</Message>}
                                 <ListGroup.Item>
                                     <p className='subheading'>Shipping Address</p>

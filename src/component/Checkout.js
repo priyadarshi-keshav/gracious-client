@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 
 const Checkout = (props) => {
 
-    const { loading, profile, error } = useSelector(state=>state.UserLogin)
+    const { profile } = useSelector(state=>state.UserLogin)
     
     const checkoutHandler = () => {
         if(profile){
@@ -20,18 +20,18 @@ const Checkout = (props) => {
     return (
         <Fragment>
             <Card className="text-center">
-                <Card.Header>
+                {/* <Card.Header>
                    Price Details
-                </Card.Header>
+                </Card.Header> */}
                 <Card.Body>
                     <Card.Text>
                         Subtotal ({props.cartItems.length}) products
                     </Card.Text>
                     <Card.Text>
-                        Total Price : <i className="fas fa-rupee-sign"></i> {props.cartItems.map(item=>item.price*item.quantity_selected).reduce((total, price)=>total+price)}
+                        Total Price : ₹ {props.cartItems.map(item=>item.price*item.quantity_selected).reduce((total, price)=>total+price)}
                     </Card.Text>
                   
-                    <button className='page_btn'  onClick={checkoutHandler}>Proceed To Checkout</button>
+                    <button style={{width:'100%'}} className='page_btn'  onClick={checkoutHandler}>Checkout</button>
                     
                 </Card.Body>
 

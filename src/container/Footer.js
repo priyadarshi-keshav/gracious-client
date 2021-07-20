@@ -15,13 +15,13 @@ const Footer = () => {
                     <p>Follow Us</p>
                     <div className='socialIcons'>
                         <a href="https://www.instagram.com/keshavpk2426/" target="blank" className="social">
-                            <i style={{fontSize:'2em'}}  className="fa fa-instagram"></i>
+                            <i style={{ fontSize: '2em' }} className="fa fa-instagram"></i>
                         </a>
                         <a href="https://twitter.com/keshavp_26" target="blank" className="social">
-                            <i style={{fontSize:'2em'}}  className="fa fa-twitter"></i>
+                            <i style={{ fontSize: '2em' }} className="fa fa-twitter"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/keshav-priyadarshi-877449125/" target="blank" className="social">
-                            <i style={{fontSize:'2em'}}  className="fa fa-linkedin"></i>
+                            <i style={{ fontSize: '2em' }} className="fa fa-linkedin"></i>
                         </a>
                     </div>
                     <hr />
@@ -35,13 +35,16 @@ const Footer = () => {
                 </Row>
 
                 <Col className='companyLogo'>
-                    <h1><span style={{ color: 'magenta' }}>Gra</span>Cious</h1>
+                    <h1>GraciousMade</h1>
                     <small>Welcome to our store</small>
 
                 </Col>
 
                 <Col className='copyright'>
-                    <center><h6>Copyright &#169; Gracious 2021 | All rights reserved</h6> </center>
+                    <center><h6>Copyright &#169; graciousmade.in 2021 | All rights reserved</h6> </center>
+                    <div style={{ float: 'right', fontSize:'2em' }}>
+                        <i className="fab fa-cc-visa"></i> <i className="fas fa-credit-card"></i> <i className="fab fa-cc-discover"></i> <i className="fab fa-google-pay"></i> <i className="fab fa-cc-mastercard"></i>
+                    </div>
                 </Col>
             </div>
         </div>

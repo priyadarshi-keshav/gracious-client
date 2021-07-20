@@ -13,6 +13,7 @@ const AdminAddCategory = ({history}) => {
 
     const dispatch = useDispatch()
     const [category_name, setCategory_name] = useState('')
+    const [category_description, setCategory_description] = useState('')
     const [image, setImage] = useState()
     const { loading, error, category_added } = useSelector(state => state.AddCategory)
 
@@ -20,8 +21,12 @@ const AdminAddCategory = ({history}) => {
         padding: '34px'
     }
 
-    const handleChange = (e) => {
+    const handleName = (e) => {
         setCategory_name(e.target.value)
+    }
+
+    const handleDescription = (e) => {
+        setCategory_description(e.target.value)
     }
 
     const handleFileChange = (e) => {
@@ -31,7 +36,7 @@ const AdminAddCategory = ({history}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        dispatch(addCategory(category_name, image))
+        dispatch(addCategory(category_name, image, category_description))
     }
 
     return (
@@ -54,7 +59,11 @@ const AdminAddCategory = ({history}) => {
                     <div>
                         <Form onSubmit={handleSubmit} style={{ marginTop: '15%' }}>
                             <Form.Group>Category name*
-                                <TextField className="form-control" type="text" name="category_name" onChange={handleChange} required />
+                                <TextField className="form-control" type="text" name="category_name" onChange={handleName} required />
+                            </Form.Group>
+
+                            <Form.Group>Category Description*
+                                <textarea rows="5" className='form-control input-fill' name="description" onChange={handleDescription} required></textarea>
                             </Form.Group>
 
 

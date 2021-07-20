@@ -18,13 +18,13 @@ const CategoryProducts = ({ match }) => {
     const { loading, error, productATC } = useSelector(state => state.ProductAccorToCat)
     const { category } = useSelector(state => state.Category)
     const { categoryDetails } = useSelector(state => state.CategoryDetails)
-     const [width, setWidth] = useState('18em')
+    const [width, setWidth] = useState('18em')
 
 
     const updateCardWidth = () => {
-        if(window.innerWidth <= 428){
+        if (window.innerWidth <= 428) {
             setWidth('10em')
-        }else{
+        } else {
             setWidth('18em')
         }
     }
@@ -47,6 +47,7 @@ const CategoryProducts = ({ match }) => {
             <SubHeader />
             <div className="allproductsbanner" data-aos="zoom-in">
                 <center><h1>{categoryDetails && categoryDetails.category_name}</h1></center>
+                <center style={{width:'50%', marginLeft:'auto', marginRight:'auto'}}>{categoryDetails && categoryDetails.category_description}</center>
             </div>
 
             {loading ? <Loader /> :
@@ -77,16 +78,33 @@ const CategoryProducts = ({ match }) => {
                                     productATC && productATC.map((items) => {
 
                                         return (
-                                            <Col xs={6} sm={6} md={6} lg={3} className='overflow category_block1' key={items._id}>
-                                                <Card variant='flush' className="border-0 text-center" style={{ margin:'5px', lineHeight: '1em', width: {width}, overflow: 'hidden' }}>
+                                            <Col xs={6} sm={6} md={6} lg={4} className='overflow category_block1' key={items._id} data-aos="fade-up">
+                                                <Card variant='flush' className="border-0 text-center" style={{ margin: '5px', lineHeight: '1em', width: { width }, overflow: 'hidden' }}>
                                                     <Link to={`/product_details/${items._id}`}>
                                                         <Card.Img variant="top" src={items.image} />
                                                     </Link>
                                                     <Card.Body>
-                                                        <Card.Text>{items.name.substring(0,26)}...</Card.Text>
+                                                        <Card.Text>{items.name}</Card.Text>
                                                         <Card.Text>Pack of {items.product_details && items.product_details.items_in_pack}</Card.Text>
-                                                        <Card.Text>₹ {items.price}</Card.Text>
-                                                        <Ratings rating={items.rating} numReview={items.reviews.length} />
+                                                        {
+                                                            items.offerprice ?
+                                                                <Card.Text>
+                                                                    ₹ {items.offerprice}
+                                                                    <span style={{ textDecoration: 'line-through' }}>₹ {items.price}</span>
+                                                                    <p style={{ color: 'green' }}>
+                                                                        {
+                                                                            Math.round((items.price - items.offerprice) / items.price * 100)
+                                                                        }% off
+                                                                    </p>
+
+                                                                </Card.Text>
+                                                                :
+                                                                <Card.Text> ₹ {items.price}</Card.Text>
+                                                        }
+                                                        {
+                                                            items.rating > 0 &&
+                                                            <Ratings rating={items.rating} />
+                                                        }
                                                     </Card.Body>
                                                 </Card>
                                             </Col>

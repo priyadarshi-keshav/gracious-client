@@ -67,18 +67,18 @@ export const addToCartDB = (productData, qty) => async (dispatch, getState) => {
         dispatch({
             type: ADD_TO_CART_REQUEST,
         })
-        console.log(productData)
+        
         const product = {
             product_id: productData._id, 
             user_id: UserLogin.profile._id,
             name: productData.name,
             image: productData.image,
-            price: productData.price,
+            price: productData.offerprice ? productData.offerprice : productData.price,
             quantity_selected: qty,
             quantity_available: productData.quantity_available,
             product_details: productData.product_details
         }
-
+        
         const config = {
             headers: {
                 'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ export const removeFromCartDB = (p_id) => async (dispatch, getState) => {
             product_id: p_id,
             user_id: UserLogin.profile._id
         }
-        console.log(header, IDs)
+       
         const { data } = await axios.put(`${process.env.REACT_APP_HOST_URL}/cart/remove_product`, IDs, header)
 
         dispatch({

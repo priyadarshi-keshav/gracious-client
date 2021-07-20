@@ -82,10 +82,11 @@ const AdminAddProduct = ({ history }) => {
                                     </Form.Group>
                                 </Col>
                                 <Col>
-                                    <Form.Group>Quantity*
-                                        <TextField className="form-control" type="number" name="quantity_available" onChange={handleChange} required /><br />
+                                    <Form.Group>Offer Price
+                                        <TextField className="form-control" type="number" name="offerprice" onChange={handleChange} placeholder="(optional)" /><br />
                                     </Form.Group>
                                 </Col>
+
                             </Row>
                             <Row>
                                 <Col>
@@ -111,10 +112,14 @@ const AdminAddProduct = ({ history }) => {
 
                             <Row>
                                 <Col>
+                                    <Form.Group>Quantity*
+                                        <TextField className="form-control" type="number" name="quantity_available" onChange={handleChange} required /><br />
+                                    </Form.Group>
+
                                     <Form.Group>Product image 1*
                                         <TextField className="form-control" accept="image/*" type="file" name="image" onChange={handleFileChange} required /><br />
                                     </Form.Group>
-                                    <Form.Group>Product image 2*
+                                    <Form.Group>Product image 2
                                         <TextField className="form-control" accept="image/*" type="file" name="image2" onChange={handleFileChange} /><br />
                                     </Form.Group>
                                     <Form.Group>Product image 3

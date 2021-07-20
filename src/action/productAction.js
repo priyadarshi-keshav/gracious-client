@@ -210,6 +210,7 @@ export const updateProduct = (productId, productData) => async (dispatch, getSta
             brand: productData.brand || null,
             description: productData.description || null,
             price: Number(productData.price) || null,
+            offerprice: Number(productData.offerprice) || null,
             quantity_available: Number(productData.quantity_available) || null,
             product_details: {
                 material: productData.material || null,

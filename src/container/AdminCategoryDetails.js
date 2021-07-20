@@ -18,6 +18,7 @@ const AdminCategoryDetails = ({ match, history }) => {
     const { profile } = useSelector(state => state.UserLogin)
 
     const [category_name, setCategory_name] = useState('')
+    const [category_description, setCategory_description] = useState('')
     const [image, setImage] = useState(null)
 
     useEffect(() => {
@@ -33,8 +34,12 @@ const AdminCategoryDetails = ({ match, history }) => {
     }, [history, dispatch, profile])
 
 
-    const handleChange = (e) => {
+    const handleName = (e) => {
         setCategory_name(e.target.value)
+    }
+
+    const handleDescription = (e) => {
+        setCategory_description(e.target.value)
     }
 
     const handleFileChange = (e) => {
@@ -44,7 +49,7 @@ const AdminCategoryDetails = ({ match, history }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await dispatch(updateCategory(categoryId, category_name, image))
+        await dispatch(updateCategory(categoryId, category_name, category_description, image))
         await dispatch(getCategoryDetails(categoryId))
     }
 
@@ -70,7 +75,13 @@ const AdminCategoryDetails = ({ match, history }) => {
                         <div>
                             <Form onSubmit={handleSubmit} style={{ marginTop: '15%' }}>
                                 <Form.Group>Category name*
-                                    <input defaultValue={categoryDetails.category_name} className="form-control" type="text" name="category_name" onChange={handleChange} required />
+                                    <input defaultValue={categoryDetails.category_name} className="form-control" type="text" name="category_name" onChange={handleName} required />
+                                </Form.Group>
+
+                                <Form.Group>Category Description*
+                                    <textarea rows="5" className='form-control input-fill' name="category_description" 
+                                    defaultValue={categoryDetails.category_description}
+                                    onChange={handleDescription} required></textarea>
                                 </Form.Group>
 
                                 <Form.Group>Category image*

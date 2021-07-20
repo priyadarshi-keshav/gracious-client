@@ -32,7 +32,7 @@ const OurProduct = () => {
     return (
         <Fragment>
             <Col className="justify-content-md-center text-center" data-aos="fade-up" style={{ padding: '20px', textTransform: 'uppercase' }} data-aos-delay="400" >
-                <center><p className='heading'>New Collection</p></center>
+                <center><p className='heading'>{newArrivalProducts.length > 0 && 'New Collection'}</p></center>
                 {newArrivalLoading ? <Loader /> :
                     <>
                         <Row>
@@ -46,11 +46,26 @@ const OurProduct = () => {
                                                     <Link to={`/product_details/${items._id}`}>
                                                         <Card.Img variant="top" src={items.image} />
                                                     </Link>
-                                                    <p style={{ position: 'absolute', top: '0', right: '0', background: 'pink', padding: '5px' }}>New Arrival</p>
+                                                    <p style={{ position: 'absolute', top: '0', right: '0', background: 'rgba(213 130 170)', padding: '5px' }}>New</p>
+
                                                     <Card.Body>
                                                         <Card.Text>{items.name}</Card.Text>
                                                         <Card.Text>Pack of {items.product_details && items.product_details.items_in_pack}</Card.Text>
-                                                        <Card.Text>₹ {items.price}</Card.Text>
+                                                        {
+                                                            items.offerprice ?
+                                                                <Card.Text>
+                                                                    ₹ {items.offerprice}
+                                                                    <span style={{ textDecoration: 'line-through' }}>₹ {items.price}</span>
+                                                                    <p style={{ color: 'green' }}>
+                                                                        {
+                                                                            Math.round((items.price - items.offerprice) / items.price * 100)
+                                                                        }% off
+                                                                    </p>
+
+                                                                </Card.Text>
+                                                                :
+                                                                <Card.Text> ₹ {items.price}</Card.Text>
+                                                        }
                                                     </Card.Body>
                                                 </Card>
                                             </Col>
@@ -60,7 +75,10 @@ const OurProduct = () => {
                             }
                         </Row>
                         <Link to='/newcollection'>
-                            <i style={{ fontSize: '3em', color: 'beige', background: 'pink', padding: '5px' }} className="fas fa-chevron-right"></i>
+                            {
+                                newArrivalProducts.length > 0 &&
+                                <i style={{ fontSize: '3em', color: 'beige', background: 'rgba(213 130 170)', padding: '5px' }} className="fas fa-chevron-right"></i>
+                            }
                         </Link>
                     </>
                 }

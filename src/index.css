@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-family: Raleway, Poppins, Futura, sans-serif !important;
+  font-family: DIN Neuzeit Grotesk !important;
   transition: color .2s ease-in-out !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,7 +13,7 @@ body {
 
 a:hover{
   text-decoration: none !important;
-  color: magenta !important;
+  color: rgba(213 130 170) !important;
 }
 
 a{
@@ -40,7 +40,7 @@ img {
 .shopNow_btn{
   display: inline-block;
   margin: 1em 0 0;
-  background: #4d05e8;
+  background: #3db997;
   color: #fff;
   padding: 10px 20px;
   text-transform: uppercase;
@@ -54,13 +54,13 @@ img {
 }
 
 .shopNow_btn:hover{
-  background: magenta;
+  background: rgba(213 130 170);
 }
 
 .page_btn{
   display: inline-block;
   margin: 1em 0 0;
-  background: #4d05e8;
+  background: #3db997;
   color: #fff;
   padding: 10px 20px;
   text-transform: uppercase;
@@ -74,7 +74,7 @@ img {
 }
 
 .page_btn:hover{
-  background: magenta;
+  background: rgba(213 130 170);
 }
 
 .category_btn{
@@ -117,7 +117,7 @@ img {
   left: 0;
   right: 1;
   width: 15%;
-  background: #4d05e8;
+  background: #3db997;
 }
 
 @media (max-width:768px) {

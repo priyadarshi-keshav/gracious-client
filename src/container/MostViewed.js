@@ -13,9 +13,9 @@ const MostViewed = () => {
     const [width, setWidth] = useState('18em')
 
     const updateCardWidth = () => {
-        if(window.innerWidth <= 428){
+        if (window.innerWidth <= 428) {
             setWidth('10em')
-        }else{
+        } else {
             setWidth('18em')
         }
     }
@@ -41,14 +41,28 @@ const MostViewed = () => {
                                 return (
 
                                     <Col xs={6} sm={6} md={6} lg={3} className='overflow category_block1' key={items._id}>
-                                        <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width: {width}, overflow: 'hidden' }}>
+                                        <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width: { width }, overflow: 'hidden' }}>
                                             <Link to={`/product_details/${items._id}`}>
                                                 <Card.Img variant="top" src={items.image} />
                                             </Link>
                                             <Card.Body>
                                                 <Card.Text>{items.name}</Card.Text>
                                                 <Card.Text>Pack of {items.product_details && items.product_details.items_in_pack}</Card.Text>
-                                                <Card.Text>₹ {items.price}</Card.Text>
+                                                {
+                                                    items.offerprice ?
+                                                        <Card.Text>
+                                                            ₹ {items.offerprice}
+                                                            <span style={{ textDecoration: 'line-through' }}>₹ {items.price}</span>
+                                                            <p style={{ color: 'green' }}>
+                                                                {
+                                                                    Math.round((items.price - items.offerprice) / items.price * 100)
+                                                                }% off
+                                                            </p>
+
+                                                        </Card.Text>
+                                                        :
+                                                        <Card.Text> ₹ {items.price}</Card.Text>
+                                                }
                                             </Card.Body>
                                         </Card>
                                     </Col>

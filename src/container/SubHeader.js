@@ -38,7 +38,7 @@ const SubHeader = (props) => {
                 <nav className="navbar navbar-expand-lg navbar-light" >
 
                     <Link to="/">
-                        <p style={{ marginTop: '5px', fontSize: '2em', color: '#4d05e8' }}>Gra<span style={{ color: 'magenta' }}>Cious</span></p>
+                        <p style={{ marginTop: '5px', fontSize: '2em', color: '#3db997' }}>GraciousMade</p>
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -50,27 +50,27 @@ const SubHeader = (props) => {
                         <ul className="navbar-nav ml-lg-auto">
 
                             <li className="nav-item nav-hover">
-                                <Link className="nav-link" to="/all_products">Shop</Link>
+                                <Link style={{color:'#3db997'}} className="nav-link" to="/all_products">Shop</Link>
                             </li>
                             <li className="nav-item nav-hover">
-                                <Link className="nav-link" to="/faqs">FAQ</Link>
+                                <Link style={{color:'#3db997'}} className="nav-link" to="/faqs">FAQ</Link>
                             </li>
                             <li className="nav-item nav-hover">
-                                <Link className="nav-link" to="/contact">Contact</Link>
+                                <Link style={{color:'#3db997'}} className="nav-link" to="/contact">Contact</Link>
                             </li>
                             {
                                 profile ?
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/profile" ><i className="far fa-user"></i></Link>
+                                        <Link style={{color:'#3db997'}} className="nav-link" to="/profile" ><i className="far fa-user"></i></Link>
                                     </li>
                                     :
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/login" ><i className="far fa-user"></i></Link>
+                                        <Link style={{color:'#3db997'}} className="nav-link" to="/login" ><i className="far fa-user"></i></Link>
                                     </li>
                             }
                             <li className="nav-item">
                                 <Link className="cartIcon nav-link" to="/cart">
-                                    <i class="fab fa-opencart"></i>
+                                    <i className="fab fa-opencart"></i>
                                     <small className='cartNum'>{authCartItems.length !== 0 ? authCartItems.length : cartItems.length}</small>
                                 </Link>
                             </li>

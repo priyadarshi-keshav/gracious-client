@@ -31,12 +31,13 @@ const Cart = () => {
             <br />
             <br />
             <br />
-
+ 
             <div className='container' style={{ marginBottom: '50px' }}>
                 <center><span className='heading'>Cart ({authCartItems.length !== 0 ? authCartItems.length : cartItems.length}) product</span></center>
-                {getCartLoading && <Loader/>}
-                {removeCartLoading && <Loader/>}
-                {updateQuantityLoading && <Loader/>}
+                {/* {getCartLoading && <Loader/>} */}
+                {/* {removeCartLoading && <Loader/>}
+                {updateQuantityLoading && <Loader/>} */}
+
                 {getCartError && <Message variant='danger'>{getCartError}</Message>}
                 {removeCartError && <Message variant='danger'>{removeCartError}</Message>}
                 {updateQuantityError && <Message variant='danger'>{updateQuantityError}</Message>}
@@ -46,7 +47,7 @@ const Cart = () => {
                 {
                     cartItems.length === 0 && authCartItems.length === 0? <EmptyCart />:
                         <div className='row'>
-                            <div className='col-md-9' style={{overflowY:'auto', height:'80vh'}}>
+                            <div className='col-md-9'>
                                 <DisCart cartItems={authCartItems.length !== 0 ? authCartItems :cartItems} />
                             </div>
 

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { ADD_CATEGORY_FAIL, ADD_CATEGORY_REQUEST, ADD_CATEGORY_SUCCESS, GET_CATEGORY_DETAILS_FAIL, GET_CATEGORY_DETAILS_REQUEST, GET_CATEGORY_DETAILS_SUCCESS, GET_CATEGORY_FAIL, GET_CATEGORY_REQUEST, GET_CATEGORY_SUCCESS, UPDATE_CATEGORY_FAIL, UPDATE_CATEGORY_REQUEST, UPDATE_CATEGORY_SUCCESS } from '../constants/categoryConstant'
 
-export const addCategory = (category_name, image) => async (dispatch, getState) => {
+export const addCategory = (category_name, image, category_description) => async (dispatch, getState) => {
     try {
         dispatch({
             type: ADD_CATEGORY_REQUEST
@@ -32,8 +32,10 @@ export const addCategory = (category_name, image) => async (dispatch, getState) 
         const categoryBody = {
             category_name,
             category_image: imageUrl,
+            category_description,
             created_by: UserLogin.profile._id
         }
+
         const config2 = {
             headers: {
                 "Content-Type": 'application/json',
@@ -102,7 +104,7 @@ export const getCategoryDetails = (categoryId) => async (dispatch) => {
 
 }
 
-export const updateCategory = (categoryId, category_name, image) => async (dispatch, getState) => {
+export const updateCategory = (categoryId, category_name, category_description, image) => async (dispatch, getState) => {
     try {
         dispatch({
             type: UPDATE_CATEGORY_REQUEST
@@ -136,6 +138,7 @@ export const updateCategory = (categoryId, category_name, image) => async (dispa
         const categoryBody = {
             category_name: category_name || null,
             category_image: imageUrl || null,
+            category_description: category_description || null,
             created_by: UserLogin.profile._id
         }
         const config2 = {
