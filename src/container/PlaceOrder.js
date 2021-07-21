@@ -39,7 +39,7 @@ const PlaceOrder = ({ history }) => {
 
         authcart.itemsPrice = authCartItems.map(item => item.price * item.quantity_selected).reduce((total, price) => total + price)
 
-        authcart.deliveryPrice = authcart.itemsPrice > 500 ? 0 : 80
+        authcart.deliveryPrice = authcart.itemsPrice > 499 ? 0 : 75
 
         authcart.totalPrice = authcart.itemsPrice + authcart.deliveryPrice
     }

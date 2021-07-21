@@ -70,14 +70,14 @@ const DisCart = ({ cartItems }) => {
                             {
                                 authCartItems.length > 0 ?
                                     <Link style={{ color: 'black' }} to={`/product_details/${item.product_id}`}>
-                                        <h5>{item.name}</h5>
+                                        <h6>{item.name}</h6>
                                     </Link>
                                     :
                                     <Link style={{ color: 'black' }} to={`/product_details/${item._id}`}>
-                                        <h5>{item.name}</h5>
+                                        <h6>{item.name}</h6>
                                     </Link>
                             }
-                            <h5>₹ {item.price}</h5>
+                            <h6>₹ {item.price}</h6>
                         </Col>
 
                         <Col xs={4} sm={3} md={3} lg={3}>

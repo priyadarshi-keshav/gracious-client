@@ -91,10 +91,13 @@ const AdminListProduct = ({ history, match, location }) => {
                                         <Link style={{ color: 'black' }} to={`/admin/productdetails/${items._id}`}>View Details</Link>
                                     </td>
                                     <td>
-                                        {productDeleteLoading ? <Spinner animation="border" />
-                                            :
-                                            <i onClick={() => productDeleteHandler(items._id)} className="fas fa-trash" style={{ cursor: 'pointer', color: 'orange' }}></i>
-                                        }
+                                        <i onClick={() => {
+                                            const confirm = window.confirm(`Are you sure to delete the product ${items.name}.`)
+                                            if (confirm) {
+                                                productDeleteHandler(items._id)
+                                            }
+                                        }}
+                                            className="fas fa-trash" style={{ cursor: 'pointer', color: 'orange' }}></i>
                                     </td>
                                 </tr>
                             })}

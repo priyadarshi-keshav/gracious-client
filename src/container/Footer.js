@@ -29,8 +29,9 @@ const Footer = () => {
                 </Row>
 
                 <Col className='companyLogo'>
-                    <h1>GraciousMade</h1>
-                    <small>Welcome to our store</small>
+                    {/* <h1>GraciousMade</h1> */}
+                    <img style={{ width: '15%' }} src="/photos/logo.png" alt="logo" />
+                    {/* <small>Welcome to our store</small> */}
 
                 </Col>
 

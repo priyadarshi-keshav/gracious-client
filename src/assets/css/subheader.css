@@ -63,14 +63,30 @@ header{
     text-align: center;
 }
 
+.mobileCart {
+    display: none;
+}
+.desktopCart {
+    display: block;
+}
+
 @media (max-width: 988px){
     .cartNum{
         right: 46%;
+    }
+    .mobileCart {
+        display: block;
     }
 }
 
 @media (max-width: 500px){
     .cartNum{
         right: 42%;
+    }
+    .mobileCart {
+        display: block;
+    }
+    .desktopCart {
+        display: none;
     }
 }

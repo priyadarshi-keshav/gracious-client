@@ -18,9 +18,6 @@ const Contact = () => {
     return (
         <Fragment>
             <SubHeader />
-            <br />
-            <br />
-            <br />
             <div style={style}>
                 <div className='container' style={{ width: '70%' }}>
 

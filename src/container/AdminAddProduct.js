@@ -83,7 +83,7 @@ const AdminAddProduct = ({ history }) => {
                                 </Col>
                                 <Col>
                                     <Form.Group>Offer Price
-                                        <TextField className="form-control" type="number" name="offerprice" onChange={handleChange} placeholder="(optional)" /><br />
+                                        <TextField className="form-control" type="number" name="offerprice" onChange={handleChange}  required /><br />
                                     </Form.Group>
                                 </Col>
 

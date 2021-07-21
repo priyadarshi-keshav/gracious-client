@@ -39,6 +39,7 @@ export const addProducts = (productData, imageFile) => async (dispatch, getState
             brand: productData.brand,
             description: productData.description,
             price: Number(productData.price),
+            offerprice: productData.offerprice,
             image: imageArr,
             quantity_available: Number(productData.quantity_available),
             product_details: {

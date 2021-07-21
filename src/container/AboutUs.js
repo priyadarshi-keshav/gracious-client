@@ -15,7 +15,7 @@ const AboutUs = () => {
             <center><p className='heading'>About Gracious</p></center>
             <Row>
                 <Col md={6}>
-                    <Image width={500} src='/photos/ourServices.jpg' alt="scrunchies" data-aos="zoom-out" data-aos-delay="400" />
+                    <Image style={{width:'50%'}} src='/photos/ourServices.jpg' alt="scrunchies" data-aos="zoom-out" data-aos-delay="400" />
                 </Col>
                 <Col md={6} data-aos="fade-up" style={display}>
                     <p className='heading'>Our Services</p>

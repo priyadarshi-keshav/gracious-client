@@ -30,9 +30,6 @@ const OrderSuccessful = ({history}) => {
     return (
         <Fragment>
             <SubHeader />
-            <br />
-            <br />
-            <br />
             <div style={style}>
                 <i style={{fontSize:'5em', color:'rgba(213 130 170)'}} className="far fa-check-circle"></i>
                 <h4>Hey {profile.firstname} {profile.lastname},</h4>

@@ -26,13 +26,14 @@ const Cart = () => {
         <Fragment>
 
             <SubHeader />
-            <br />
-            <br />
-            <br />
             <div>
                 {
                     cartItems.length === 0 && authCartItems.length === 0 ? <EmptyCart /> :
                         <div>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
                             <center>
                                 <span className='heading'>Cart ({authCartItems.length !== 0 ? authCartItems.length : cartItems.length})</span>
                                 {getCartError && <Message variant='danger'>{getCartError}</Message>}
@@ -40,7 +41,7 @@ const Cart = () => {
                                 {updateQuantityError && <Message variant='danger'>{updateQuantityError}</Message>}
                             </center>
 
-                            <div className='container row' style={{ marginTop: '50px', marginRight:'auto', marginLeft:'auto' }} >
+                            <div className='container row' style={{ marginTop: '50px', marginBottom: '50px', marginRight: 'auto', marginLeft: 'auto' }} >
                                 <div className='col-md-9'>
                                     <DisCart cartItems={authCartItems.length !== 0 ? authCartItems : cartItems} />
                                 </div>

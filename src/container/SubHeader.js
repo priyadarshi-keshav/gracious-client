@@ -34,42 +34,52 @@ const SubHeader = (props) => {
 
     return (
         <header style={{ backgroundColor: `${bgcolor}`, boxShadow: `${shadow}` }}>
+            <center style={{ backgroundColor: 'rgba(213 130 170)' }}>FREE PREPAID SHIPPING ABOVE ₹ 499</center>
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light" >
 
-                    <Link to="/">
-                        <p style={{ marginTop: '5px', fontSize: '2em', color: '#3db997' }}>GraCiousMade</p>
-                    </Link>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+
+                        <Link to="/">
+                            {/* <p style={{ marginTop: '5px', fontSize: '1.5em', color: '#3db997' }}>GraCiousMade</p> */}
+                            <img style={{ width: '50%' }} src="/photos/logo.png" alt="logo" />
+                        </Link>
+
+                        <Link className="mobileCart cartIcon nav-link" to="/cart">
+                            <i className="fab fa-opencart"></i>
+                            <small className='cartNum'>{authCartItems.length !== 0 ? authCartItems.length : cartItems.length}</small>
+                        </Link>
+
+                        <Link style={{ color: '#3db997' }} className="mobileCart cartIcon nav-link" to="/profile">
+                            <i className="far fa-user"></i>
+                        </Link>
+
+                    </div>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-lg-auto">
 
                             <li className="nav-item nav-hover">
-                                <Link style={{color:'#3db997'}} className="nav-link" to="/all_products">Shop</Link>
+                                <Link style={{ color: '#3db997' }} className="nav-link" to="/all_products">Shop</Link>
                             </li>
                             <li className="nav-item nav-hover">
-                                <Link style={{color:'#3db997'}} className="nav-link" to="/under_development">FAQ</Link>
+                                <Link style={{ color: '#3db997' }} className="nav-link" to="/under_development">FAQ</Link>
                             </li>
                             <li className="nav-item nav-hover">
-                                <Link style={{color:'#3db997'}} className="nav-link" to="/contact">Contact</Link>
+                                <Link style={{ color: '#3db997' }} className="nav-link" to="/contact">Contact</Link>
                             </li>
-                            {
-                                profile ?
-                                    <li className="nav-item">
-                                        <Link style={{color:'#3db997'}} className="nav-link" to="/profile" ><i className="far fa-user"></i></Link>
-                                    </li>
-                                    :
-                                    <li className="nav-item">
-                                        <Link style={{color:'#3db997'}} className="nav-link" to="/login" ><i className="far fa-user"></i></Link>
-                                    </li>
-                            }
+
                             <li className="nav-item">
-                                <Link className="cartIcon nav-link" to="/cart">
+                                <Link style={{ color: '#3db997' }} className="desktopCart nav-link" to="/profile" ><i className="far fa-user"></i></Link>
+                            </li>
+
+                            <li className="nav-item">
+                                <Link className="desktopCart cartIcon nav-link" to="/cart">
                                     <i className="fab fa-opencart"></i>
                                     <small className='cartNum'>{authCartItems.length !== 0 ? authCartItems.length : cartItems.length}</small>
                                 </Link>
