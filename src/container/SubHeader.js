@@ -38,7 +38,7 @@ const SubHeader = (props) => {
                 <nav className="navbar navbar-expand-lg navbar-light" >
 
                     <Link to="/">
-                        <p style={{ marginTop: '5px', fontSize: '2em', color: '#3db997' }}>GraciousMade</p>
+                        <p style={{ marginTop: '5px', fontSize: '2em', color: '#3db997' }}>GraCiousMade</p>
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
