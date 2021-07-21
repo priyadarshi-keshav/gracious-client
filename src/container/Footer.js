@@ -14,14 +14,8 @@ const Footer = () => {
                 <Col>
                     <p>Follow Us</p>
                     <div className='socialIcons'>
-                        <a href="https://www.instagram.com/keshavpk2426/" target="blank" className="social">
+                        <a href="https://www.instagram.com/gracious_by_pooja/" target="blank" className="social">
                             <i style={{ fontSize: '2em' }} className="fa fa-instagram"></i>
-                        </a>
-                        <a href="https://twitter.com/keshavp_26" target="blank" className="social">
-                            <i style={{ fontSize: '2em' }} className="fa fa-twitter"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/keshav-priyadarshi-877449125/" target="blank" className="social">
-                            <i style={{ fontSize: '2em' }} className="fa fa-linkedin"></i>
                         </a>
                     </div>
                     <hr />
@@ -30,7 +24,7 @@ const Footer = () => {
                     <Link to="/" ><span>HOME</span></Link>
                     <Link to="/all_products"><span>SHOP</span></Link>
                     <Link to="/contact"><span>CONTACT US</span></Link>
-                    <Link to="/faqs"><span>FAQs</span></Link>
+                    <Link to="/under_development"><span>FAQs</span></Link>
                     <HashLink to="#"><NavigationIcon /></HashLink>
                 </Row>
 

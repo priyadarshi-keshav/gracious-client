@@ -124,7 +124,7 @@ const DisProductDetails = (props) => {
                                             </button>
                                                 :
                                                 data.quantity_available <= 0 ?
-                                                    <button style={{ width: '100%', backgroundColor: 'magenta' }} className="page_btn">Out Of Stock</button>
+                                                    <button style={{ width: '100%', backgroundColor: 'rgba(213 130 170)' }} className="page_btn">Out Of Stock</button>
                                                     :
                                                     <button style={{ width: '100%' }} onClick={() => AddToCart(data)} className="page_btn">Add to cart</button>
                                     }

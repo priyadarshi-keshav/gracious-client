@@ -91,7 +91,7 @@ const Routes = () => {
                 <Route path='/admin/completed_orders' component={AdminListCompletedOrders} />
 
                 <Route path='/order_placed' component={OrderSuccessful} />
-                <Route path='/category' component={UnderConstruction} />
+                <Route path='/under_development' component={UnderConstruction} />
                 <Route component={PageNotFound} />
             </Switch>
             <Footer />

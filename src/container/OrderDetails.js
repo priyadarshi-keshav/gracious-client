@@ -54,9 +54,9 @@ const OrderDetails = ({ history, match }) => {
                                 <Col md={8}>
                                     <ListGroup variant='flush'>
                                         <ListGroup.Item>
-                                            Order ID : {orderDetails._id}<br />
-                                            Payment ID : {orderDetails.paymentResult.razorpay_order_id}<br />
-                                            Order Dt. : {orderDetails.createdAt.substring(0, 10)}
+                                            Order ID : {orderDetails.order_id}<br />
+                                            Payment ID : {orderDetails.paymentResult.razorpay_payment_id}<br />
+                                            Created : {orderDetails.createdAt.substring(0, 10)}
                                         </ListGroup.Item>
                                         <ListGroup.Item>
                                             <p className='subheading'>Product List</p>
@@ -71,13 +71,13 @@ const OrderDetails = ({ history, match }) => {
                                                                 </Link>
                                                             </Col>
                                                             <Col md={6}>
-                                                                <Link to={`/product_details/${item.product_id}`}>
-                                                                    {item.name}
+                                                                <Link style={{ color: 'black' }} to={`/product_details/${item.product_id}`}>
+                                                                    <h5>{item.name}</h5>
                                                                 </Link>
                                                             </Col>
 
                                                             <Col md={4}>
-                                                                <i className="fas fa-rupee-sign"></i>{item.price} x {item.quantity_selected} = <i className="fas fa-rupee-sign"></i>{item.quantity_selected * item.price}
+                                                                ₹ {item.price} x {item.quantity_selected} = ₹ {item.quantity_selected * item.price}
                                                             </Col>
                                                         </Row>
                                                     </ListGroup.Item>
@@ -109,7 +109,10 @@ const OrderDetails = ({ history, match }) => {
                                                         <p>Contact : {orderDetails.paymentResult.contact}</p>
                                                     </>
                                                     :
-                                                    <></>
+                                                    <>
+                                                        <p>Email : {orderDetails.paymentResult.email}</p>
+                                                        <p>Contact : {orderDetails.paymentResult.contact}</p>
+                                                    </>
                                             }
                                         </ListGroup.Item>
                                     </ListGroup>
@@ -129,20 +132,20 @@ const OrderDetails = ({ history, match }) => {
                                                 <ListGroup.Item>
                                                     <Row>
                                                         <Col>Item Price</Col>
-                                                        <Col><i className="fas fa-rupee-sign"></i>{orderDetails.itemsPrice}</Col>
+                                                        <Col>₹ {orderDetails.itemsPrice}</Col>
                                                     </Row>
                                                 </ListGroup.Item>
                                                 <ListGroup.Item>
                                                     <Row>
                                                         <Col>Delivery</Col>
-                                                        <Col><i className="fas fa-rupee-sign"></i>{orderDetails.deliveryPrice}</Col>
+                                                        <Col>₹ {orderDetails.deliveryPrice}</Col>
                                                     </Row>
                                                 </ListGroup.Item>
 
                                                 <ListGroup.Item>
                                                     <Row>
                                                         <Col>Paid Amount</Col>
-                                                        <Col><i className="fas fa-rupee-sign"></i>{orderDetails.totalPrice}</Col>
+                                                        <Col>₹ {orderDetails.totalPrice}</Col>
                                                     </Row>
                                                 </ListGroup.Item>
 
@@ -159,7 +162,10 @@ const OrderDetails = ({ history, match }) => {
                                                 {
                                                     profile.role === 'admin' && orderDetails.isDelivered === false ?
                                                         <>
-                                                            <p style={{ color: 'red' }}>Not Delivered</p>
+                                                            <div>
+                                                                <p style={{ color: 'red' }}>NOT DELIVERED</p>
+                                                                <p>We'll send you a shipping confrmation on your given details as soon as your order ships.</p>
+                                                            </div>
                                                             <small>Click below to change the status</small>
                                                             <button
                                                                 onClick={() => {
@@ -173,7 +179,10 @@ const OrderDetails = ({ history, match }) => {
                                                         </>
                                                         :
                                                         orderDetails.isDelivered === false ?
-                                                            <p style={{ color: 'red' }}>Not Delivered</p>
+                                                            <div>
+                                                                <p style={{ color: 'red' }}>NOT DELIVERED</p>
+                                                                <p>We'll send you a shipping confrmation on your given details as soon as your order ships.</p>
+                                                            </div>
                                                             :
                                                             <>
                                                                 <p style={{ color: 'green' }}>Delivered On</p>
@@ -185,10 +194,11 @@ const OrderDetails = ({ history, match }) => {
                                         {!orderDetails.isDelivered &&
                                             <>
                                                 <Card.Header>
-                                                    Tracking no.
+                                                    Issue with your order! Mail Us
                                                 </Card.Header>
                                                 <Card.Body>
-                                                    <p className='form-control' disabled>update soon</p>
+                                                    {/* <p className='form-control' disabled>update soon</p> */}
+                                                    <a style={{color:'black'}} href={`mailto:support@graciousmade.in`}>support@graciousmade.in</a>
                                                 </Card.Body>
                                             </>
                                         }

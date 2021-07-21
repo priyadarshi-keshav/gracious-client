@@ -11,17 +11,17 @@ import Loader from '../Extras/Loader'
 const Cart = () => {
 
     const dispatch = useDispatch()
-    const {cartItems} = useSelector(state => state.Cart)
-    const {authCartItems} = useSelector(state => state.AuthCart)
-    const {profile} = useSelector(state=>state.UserLogin)
-    const { getCartLoading, getCartError, removeCartLoading, removeCartError, updateQuantityLoading, updateQuantityError } = useSelector(state=>state.AuthCart)
+    const { cartItems } = useSelector(state => state.Cart)
+    const { authCartItems } = useSelector(state => state.AuthCart)
+    const { profile } = useSelector(state => state.UserLogin)
+    const { getCartLoading, getCartError, removeCartLoading, removeCartError, updateQuantityLoading, updateQuantityError } = useSelector(state => state.AuthCart)
 
     useEffect(() => {
-       if(profile){
-        dispatch(getCartProducts())
-       }
+        if (profile) {
+            dispatch(getCartProducts())
+        }
     }, [profile])
-    
+
     return (
         <Fragment>
 
@@ -29,31 +29,27 @@ const Cart = () => {
             <br />
             <br />
             <br />
-            <br />
-            <br />
- 
-            <div className='container' style={{ marginBottom: '50px' }}>
-                <center><span className='heading'>Cart ({authCartItems.length !== 0 ? authCartItems.length : cartItems.length}) product</span></center>
-                {/* {getCartLoading && <Loader/>} */}
-                {/* {removeCartLoading && <Loader/>}
-                {updateQuantityLoading && <Loader/>} */}
-
-                {getCartError && <Message variant='danger'>{getCartError}</Message>}
-                {removeCartError && <Message variant='danger'>{removeCartError}</Message>}
-                {updateQuantityError && <Message variant='danger'>{updateQuantityError}</Message>}
-            </div>
-
-            <div className='container' style={{padding:'34px'}}>
+            <div>
                 {
-                    cartItems.length === 0 && authCartItems.length === 0? <EmptyCart />:
-                        <div className='row'>
-                            <div className='col-md-9'>
-                                <DisCart cartItems={authCartItems.length !== 0 ? authCartItems :cartItems} />
+                    cartItems.length === 0 && authCartItems.length === 0 ? <EmptyCart /> :
+                        <div>
+                            <center>
+                                <span className='heading'>Cart ({authCartItems.length !== 0 ? authCartItems.length : cartItems.length})</span>
+                                {getCartError && <Message variant='danger'>{getCartError}</Message>}
+                                {removeCartError && <Message variant='danger'>{removeCartError}</Message>}
+                                {updateQuantityError && <Message variant='danger'>{updateQuantityError}</Message>}
+                            </center>
+
+                            <div className='container row' style={{ margin: '50px' }} >
+                                <div className='col-md-9'>
+                                    <DisCart cartItems={authCartItems.length !== 0 ? authCartItems : cartItems} />
+                                </div>
+
+                                <div className='col-md-3'>
+                                    <Checkout cartItems={authCartItems.length !== 0 ? authCartItems : cartItems} />
+                                </div>
                             </div>
 
-                            <div className='col-md-3'>
-                                <Checkout cartItems={authCartItems.length !== 0 ? authCartItems :cartItems}/>
-                            </div>
                         </div>
                 }
             </div>

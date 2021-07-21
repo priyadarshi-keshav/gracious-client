@@ -10,9 +10,9 @@ const MyOrders = ({ orders }) => {
                 return (
 
                     <tr key={items._id}>
-                        <td>{items._id}</td>
+                        <td>{items.order_id}</td>
                         <td>{items.createdAt.substring(0, 10)}</td>
-                        <td>{items.totalPrice}</td>
+                        <td>₹ {items.totalPrice}</td>
                         <td>
                             {
                                 items.isPaid ? items.paidAt.substring(0, 10)
@@ -43,10 +43,10 @@ const MyOrders = ({ orders }) => {
                 <thead>
                     <tr>
                         <th>Order ID</th>
-                        <th>Order Dt.</th>
+                        <th>Created</th>
                         <th>Amout</th>
                         <th>Paid</th>
-                        <th>Delivered</th>
+                        <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>

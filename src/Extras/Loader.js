@@ -9,7 +9,7 @@ const Loader = () => {
             margin:'auto',
             marginBottom:'50px',
             display:'block',
-            color:'#4d05e8'
+            color:'rgba(213 130 170)'
         }}>
             <span className='sr-only'>
                 Loading...

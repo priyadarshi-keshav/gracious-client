@@ -53,7 +53,7 @@ const SubHeader = (props) => {
                                 <Link style={{color:'#3db997'}} className="nav-link" to="/all_products">Shop</Link>
                             </li>
                             <li className="nav-item nav-hover">
-                                <Link style={{color:'#3db997'}} className="nav-link" to="/faqs">FAQ</Link>
+                                <Link style={{color:'#3db997'}} className="nav-link" to="/under_development">FAQ</Link>
                             </li>
                             <li className="nav-item nav-hover">
                                 <Link style={{color:'#3db997'}} className="nav-link" to="/contact">Contact</Link>

@@ -1,85 +1,56 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Fragment } from 'react'
 import SubHeader from './SubHeader'
-import { Form, Col, Row } from 'react-bootstrap'
-import { TextField } from '@material-ui/core'
-
-const Style = {
-    padding: '34px',
-    height: '100vh'
-}
+import { Col, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Contact = () => {
-    const [data, setData] = useState({})
 
-    const handleChange = (e) => {
-        setData(data => ({ ...data, [e.target.name]: e.target.value }))
-    }
-    const submitHandler = (e) => {
-        e.preventDefault()
+    const style = {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        textAlign: 'center',
+        backgroundColor: 'beige',
+        height: '100vh'
     }
 
     return (
         <Fragment>
-
             <SubHeader />
             <br />
             <br />
-            <Row className='justify-content-md-center' style={Style}>
-                <Col sm={12} md={8} lg={6}>
-                    <center>
-                        <p className='heading'>Contact Us</p>
-                        <p>
-                            If you have any questions about orders, sizes, new collections, be sure you check out our FAQ page. If your question wasn't answered there, don't hesitate to drop us a line. 
-                        </p>
-                    </center>
+            <br />
+            <div style={style}>
+                <div className='container' style={{ width: '50%' }}>
 
-                    <Form onSubmit={submitHandler} style={{ marginTop: '10%' }}>
+                    <p className='heading'>Contact Us</p>
+                    <h4>
+                        If you have any questions about orders, sizes, new collections, be sure you check out our FAQ page. If your question wasn't answered there, or you want to join our team ? Don't hesitate to drop us a mail.
+                    </h4>
 
-                        <Row>
-                            <Col>
-                                <Form.Group>
-                                    Name
-                                    <TextField className='form-control' name='name' type='text' onChange={handleChange} required />
-                                </Form.Group>
-                            </Col>
-                            <Col>
-                                <Form.Group>
-                                    Email
-                                    <TextField className='form-control' name='email' type='email' onChange={handleChange} required />
-                                </Form.Group>
-                            </Col>
-                        </Row>
+                    <Row>
 
-                        <Row>
-                            <Col>
-                                <Form.Group>
-                                    Your Message<br />
-                                    <textarea rows="5" className='form-control input-fill' name="message" onChange={handleChange} required></textarea>
-                                </Form.Group>
-                            </Col>
-                        </Row>
-                        <br />
+                        <Col>
+                            <Link>
+                                <i style={{ fontSize: '5em', color: 'rgba(213 130 170)' }} className="fas fa-map-marker-alt"></i>
+                            </Link>
+                            <br />
+                            <h5>Ranchi, Jharkhand, India</h5>
+                        </Col>
 
-                        <Row>
-                            <Col>
-                                <Form.Group>
-                                    City
-                                    <TextField className='form-control' name='city' type='text' onChange={handleChange} required />
-                                </Form.Group>
-                            </Col>
-                            <Col>
-                                <Form.Group>
-                                    State
-                                    <TextField className='form-control' name='state' type='text' onChange={handleChange} required />
-                                </Form.Group>
-                            </Col>
-                        </Row>
+                        <Col>
+                            <Link>
+                                <i style={{ fontSize: '5em', color: 'rgba(213 130 170)' }} className="fas fa-envelope"></i>
+                            </Link>
+                            <br />
+                            <a style={{ color: 'black' }} href={`mailto:support@graciousmade.in`}> <h5>support@graciousmade.in</h5></a>
 
-                        <button className='page_btn' >Send</button>
-                    </Form>
-                </Col>
-            </Row>
+                        </Col>
+
+                    </Row>
+                </div>
+            </div>
         </Fragment>
     )
 }

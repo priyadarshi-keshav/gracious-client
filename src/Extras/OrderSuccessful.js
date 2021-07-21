@@ -1,23 +1,47 @@
-import React, { Fragment } from 'react'
-import { Col, Row, Image } from 'react-bootstrap'
+import React, { Fragment, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import SubHeader from '../container/SubHeader'
+import { orderPlacedReset } from '../action/orderAction'
 
-const OrderSuccessful = () => {
+const OrderSuccessful = ({history}) => {
+    const dispatch = useDispatch()
+    const { profile } = useSelector(state => state.UserLogin)
+    const { success, error } = useSelector(state => state.PlaceOrder)
+
+    useEffect(() => {
+        if(!success){
+            history.push('/')
+        }
+        return () => {
+            dispatch(orderPlacedReset())
+        }
+        
+    }, [history])
+
+    const style = {
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        textAlign:'center',
+        backgroundColor:'beige', 
+        height:'100vh'
+    }
     return (
         <Fragment>
-            <SubHeader/>
-            <br/>
-            <br/>
-            <br/>
-            <Col className="justify-content-md-center text-center" style={{ padding: '20px' }}>
-                <p className='heading'>Order successfully placed</p>
-                <Image width={500} src='/photos/order-successful.gif' />
-                <br/>
+            <SubHeader />
+            <br />
+            <br />
+            <br />
+            <div style={style}>
+                <i style={{fontSize:'5em', color:'rgba(213 130 170)'}} className="far fa-check-circle"></i>
+                <h4>Hey {profile.firstname} {profile.lastname},</h4>
+                <h2>Your Order is Confirmed!</h2>
+                <p>We'll send you a shipping confrmation on your given details as soon as your order ships.</p>
                 <Link to="/profile#myorders">
-                   <button className='page_btn'>VIEW ORDERS</button>
+                    <button className='page_btn'>VIEW ORDERS</button>
                 </Link>
-            </Col>
+            </div>
         </Fragment>
     )
 }

@@ -1,14 +1,7 @@
 import React, { Fragment } from 'react'
 import { Col, Row } from 'react-bootstrap'
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
 import SubHeader from './SubHeader'
 
-const Style = {
-    padding: '34px'
-}
 
 const FAQs = () => {
     return (
@@ -18,77 +11,62 @@ const FAQs = () => {
             <br />
             <br />
 
-            <Row className='justify-content-md-center'>
-                <Col style={Style}>
+            <div className='container' style={{padding:'20px'}}>
+                <Col>
                     <center><p className='heading'>FAQ</p></center>
 
-                    <Col style={{marginTop:'5%'}}>
-                    <Accordion>
-                        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                            <Typography>Where do you ship?</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                    <Accordion>
-                        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                            <Typography>What do I do if I entered an incorrect shipping address?</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                    <Accordion>
-                        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                            <Typography>What size scrunchie should I choose?</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                    
-                    <Accordion>
-                        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                            <Typography>What size scrunchie should I choose?</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                    <Accordion>
-                        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                            <Typography>How do I clean my scrunchie?</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                
-         
+                    <Col>
+
+                        <div className="accordion" id="accordionExample">
+                            <div className="card">
+                                <div className="card-header" id="headingOne">
+                                    <h2 className="mb-0">
+                                        <button className="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Collapsible Group Item #1
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div className="card-body">
+                                        Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the <code>.show</code> className.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div className="card">
+                                <div className="card-header" id="headingTwo">
+                                    <h2 className="mb-0">
+                                        <button className="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Collapsible Group Item #2
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div className="card-body">
+                                        Some placeholder content for the second accordion panel. This panel is hidden by default.
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card">
+                                <div className="card-header" id="headingThree">
+                                    <h2 className="mb-0">
+                                        <button className="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Collapsible Group Item #3
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div className="card-body">
+                                        And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </Col>
                 </Col>
-            </Row>
+            </div>
         </Fragment>
     )
 }

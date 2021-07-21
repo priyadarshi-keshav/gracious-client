@@ -1,22 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Col, Image } from 'react-bootstrap'
 
 const EmptyCart = () => {
     const style = {
-        width: '70%',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        marginBottom: '50px'
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        textAlign: 'center',
+        backgroundColor: 'beige',
+        height: '100vh'
     }
     return (
-        <Col style={style} className="justify-content-md-center text-center" >
-            <Image src='/photos/emptycart.gif' />
+        <div style={style}>
+           <i style={{fontSize:'5em', color:'rgba(213 130 170)'}} className="far fa-frown"></i>
            
-            <Link to='/all_products'>
-                <button className='shopNow_btn'>Continue Shopping</button>
+            <h2>Your Cart is Empty</h2>
+            <p>Add something to make me happy :)</p>
+            <Link to="/all_products">
+                <button className='page_btn'>Continue Shopping</button>
             </Link>
-        </Col>
+        </div>
     )
 }
 
