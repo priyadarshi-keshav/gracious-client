@@ -12,7 +12,7 @@ const Contact = () => {
         justifyContent: 'center',
         textAlign: 'center',
         backgroundColor: 'beige',
-        height: '100vh'
+        height:'100vh'
     }
 
     return (
@@ -22,9 +22,9 @@ const Contact = () => {
             <br />
             <br />
             <div style={style}>
-                <div className='container' style={{ width: '50%' }}>
+                <div className='container' style={{ width: '70%' }}>
 
-                    <p className='heading'>Contact Us</p>
+                    <h1 className='heading'>Contact Us</h1>
                     <h4>
                         If you have any questions about orders, sizes, new collections, be sure you check out our FAQ page. If your question wasn't answered there, or you want to join our team ? Don't hesitate to drop us a mail.
                     </h4>

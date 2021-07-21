@@ -32,9 +32,9 @@ const OurProduct = () => {
     return (
         <Fragment>
             <Col className="justify-content-md-center text-center" data-aos="fade-up" style={{ padding: '20px', textTransform: 'uppercase' }} data-aos-delay="400" >
-                <center><p className='heading'>{newArrivalProducts.length > 0 && 'New Collection'}</p></center>
                 {newArrivalLoading ? <Loader /> :
                     <>
+                        <center><p className='heading'>New Collection</p></center>
                         <Row>
                             {
                                 newArrivalProducts && newArrivalProducts.map((items, idx) => {
@@ -75,10 +75,7 @@ const OurProduct = () => {
                             }
                         </Row>
                         <Link to='/newcollection'>
-                            {
-                                newArrivalProducts.length > 0 &&
-                                <i style={{ fontSize: '3em', color: 'beige', background: 'rgba(213 130 170)', padding: '5px' }} className="fas fa-chevron-right"></i>
-                            }
+                            <i style={{ fontSize: '3em', color: 'beige', background: 'rgba(213 130 170)', padding: '5px' }} className="fas fa-chevron-right"></i>
                         </Link>
                     </>
                 }

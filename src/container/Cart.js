@@ -40,7 +40,7 @@ const Cart = () => {
                                 {updateQuantityError && <Message variant='danger'>{updateQuantityError}</Message>}
                             </center>
 
-                            <div className='container row' style={{ margin: '50px' }} >
+                            <div className='container row' style={{ marginTop: '50px', marginRight:'auto', marginLeft:'auto' }} >
                                 <div className='col-md-9'>
                                     <DisCart cartItems={authCartItems.length !== 0 ? authCartItems : cartItems} />
                                 </div>
