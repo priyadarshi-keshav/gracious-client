@@ -5,8 +5,7 @@
 
 .allproductsbanner img{
     width: 100%;
-    /* height: 90vh; */
-    /* opacity: 0.8; */
+    height: 80vh;
 }
 
 .allproductsbannerChild {
@@ -29,6 +28,9 @@
     }
     .allproductsbannerChild h2 {
         font-size: 1.2em;
+    }
+    .allproductsbanner img{
+        height: auto;
     }
 }
 

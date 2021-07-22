@@ -5,6 +5,7 @@
 
 .banner img{
     width: 100%;
+    height: 90vh
     /* opacity: 0.8; */
 }
 
@@ -38,5 +39,8 @@
     }
     .bannerChild h2 {
         font-size: 1.1em;
+    }
+    .banner img{
+        height: auto
     }
 }
