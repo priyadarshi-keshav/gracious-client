@@ -19,7 +19,7 @@ const AboutUs = () => {
                 </Col>
                 <Col md={6} data-aos="fade-up" style={display}>
                     <p className='heading'>Our Services</p>
-                    <p>At ChocoCraft we believe in making our customers happy! Our team will work with you every step of the way to ensure that you get perfect gift for your event or occasion.
+                    <p>We believe in making our customers happy! Our team will work with you every step of the way to ensure that you get perfect gift for your event or occasion.
 
                         Right from your first call, you will work with our experienced account handling team. We work with you through the entire process, of designing and making the gifts, to delivering them to your doorstep.
 
@@ -32,9 +32,7 @@ const AboutUs = () => {
                     <p className='heading'>Product Quality</p>
                     <p>When it comes to product quality we make no compromises! We use only the best ingredients sourced from the best suppliers globally.
 
-                        The colors used for printing on chocolates comply to USFDA and are sourced from one of the best suppliers. The chocolates are made and packed in our production facility under the strictest norms.
-
-                        We understand we play an important part in a happy occasion that you are celebrating and we never want to let you down. We work hard to make sure that each chocolate and each box is handcrafted to perfection!</p>
+                        We understand we play an important part in a happy occasion that you are celebrating and we never want to let you down. We work hard to make sure that each scrunchie and each box is handcrafted to perfection!</p>
                 </Col>
                 {/* <Col md={6}>
                     <Image width={500} src='/photos/Scrunchies.png' alt="scrunchies" data-aos="zoom-out" data-aos-delay="400" />
