@@ -1,7 +1,7 @@
 header{
     position: fixed;
     z-index: 10;
-    width: 100%
+    width: 100%;
 }
 
 .header_svg{
@@ -63,30 +63,42 @@ header{
     text-align: center;
 }
 
-.mobileCart {
+.mobile {
     display: none;
 }
-.desktopCart {
+.desktop {
     display: block;
+}
+.viewChange {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.viewChange div{
+    display: flex;
 }
 
 @media (max-width: 988px){
     .cartNum{
-        right: 46%;
+        right: 12%;
     }
-    .mobileCart {
+    .mobile {
         display: block;
+    }
+    .desktop {
+        display: none;
     }
 }
 
 @media (max-width: 500px){
     .cartNum{
-        right: 42%;
+        right: 12%;
     }
-    .mobileCart {
+    .mobile {
         display: block;
     }
-    .desktopCart {
+    .desktop {
         display: none;
     }
 }

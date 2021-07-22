@@ -45,11 +45,13 @@ const CategoryProducts = ({ match }) => {
     return (
         <Fragment>
             <SubHeader />
-            <div className="allproductsbanner" data-aos="zoom-in">
-                <center><h1>{categoryDetails && categoryDetails.category_name}</h1></center>
-                <center style={{width:'50%', marginLeft:'auto', marginRight:'auto'}}>{categoryDetails && categoryDetails.category_description}</center>
+            <div className="allproductsbanner" >
+                <img src="/photos/allproducts.jpg" alt="hero section" data-aos="zoom-in"/>
+                <div className="allproductsbannerChild" data-aos="fade-up">
+                    <h2>{categoryDetails && categoryDetails.category_name}</h2>
+                    <p> {categoryDetails && categoryDetails.category_description}</p>
+                </div>
             </div>
-
             {loading ? <Loader /> :
                 error ? <Message variant='danger'>{error}</Message> :
                     <Row>

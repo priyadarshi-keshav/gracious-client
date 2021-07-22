@@ -10,7 +10,6 @@ const SubHeader = (props) => {
     const [bgcolor, setBgColor] = useState("")
     const [shadow, setShadow] = useState("")
 
-    const { profile } = useSelector(state => state.UserLogin)
     const { cartItems } = useSelector(state => state.Cart)
     const { authCartItems } = useSelector(state => state.AuthCart)
 
@@ -38,7 +37,7 @@ const SubHeader = (props) => {
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light" >
 
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div className='viewChange'>
                         <button className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -49,16 +48,16 @@ const SubHeader = (props) => {
                             {/* <p style={{ marginTop: '5px', fontSize: '1.5em', color: '#3db997' }}>GraCiousMade</p> */}
                             <img style={{ width: '50%' }} src="/photos/logo.png" alt="logo" />
                         </Link>
+                        <div>
+                            <Link style={{ color: '#3db997' }} className="mobile cartIcon nav-link" to="/cart">
+                                <i className="fab fa-opencart"></i>
+                                <small className='cartNum'>{authCartItems.length !== 0 ? authCartItems.length : cartItems.length}</small>
+                            </Link>
 
-                        <Link className="mobileCart cartIcon nav-link" to="/cart">
-                            <i className="fab fa-opencart"></i>
-                            <small className='cartNum'>{authCartItems.length !== 0 ? authCartItems.length : cartItems.length}</small>
-                        </Link>
-
-                        <Link style={{ color: '#3db997' }} className="mobileCart cartIcon nav-link" to="/profile">
-                            <i className="far fa-user"></i>
-                        </Link>
-
+                            <Link style={{ color: '#3db997' }} className="mobile cartIcon nav-link" to="/profile">
+                                <i className="far fa-user"></i>
+                            </Link>
+                        </div>
                     </div>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -75,16 +74,15 @@ const SubHeader = (props) => {
                             </li>
 
                             <li className="nav-item">
-                                <Link style={{ color: '#3db997' }} className="desktopCart nav-link" to="/profile" ><i className="far fa-user"></i></Link>
+                                <Link style={{ color: '#3db997' }} className="desktop nav-link" to="/profile" ><i className="far fa-user"></i></Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link className="desktopCart cartIcon nav-link" to="/cart">
+                                <Link style={{ color: '#3db997' }} className="desktop cartIcon nav-link" to="/cart">
                                     <i className="fab fa-opencart"></i>
                                     <small className='cartNum'>{authCartItems.length !== 0 ? authCartItems.length : cartItems.length}</small>
                                 </Link>
                             </li>
-
                         </ul>
                     </div>
                 </nav>

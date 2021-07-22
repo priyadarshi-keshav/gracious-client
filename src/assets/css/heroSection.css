@@ -1,25 +1,42 @@
 .banner{
     position: relative;
-    background: url("../herobackground.jpg");
-    opacity: 0.1;
-    background-size: cover;
-    background-position: center;
-    padding: 250px 0px 200px;
+    margin-bottom: 50px;
+}
+
+.banner img{
+    width: 100%;
+    /* opacity: 0.8; */
+}
+
+.bannerChild {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    padding: 34px;
+    width: 100%;
     color: white;
-    overflow: hidden;
+    text-transform: uppercase;
 }
 
-.banner h2 {
-    margin: 0;
-    padding: 0;
+.bannerChild h2 {
     font-size: 2em;
-    color: rgba(213 130 170);
+    text-align: center;
 }
 
-.banner p{
-    margin: 1em 0 0;
-    padding: 0;
-    font-size: 1.2em;
-    line-height: 1.5em;
-    color: rgba(213 130 170);
+@media (max-width:500px) {
+    .bannerChild {
+        top: 20%;
+    }
+}
+
+@media (max-width:768px) {
+    .bannerChild p {
+        font-size: 1em;
+    }
+    .bannerChild h2 {
+        font-size: 1.1em;
+    }
 }

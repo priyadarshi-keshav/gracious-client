@@ -39,9 +39,12 @@ const AllProduct = () => {
     return (
         <Fragment>
             <SubHeader />
-            <Col className="allproductsbanner" data-aos="zoom-in">
-                <center><h1>All Products</h1></center>
-            </Col>
+            <div className="allproductsbanner">
+                <img src="/photos/allproducts.jpg" alt="hero section" data-aos="zoom-in"/>
+                <div className="allproductsbannerChild" data-aos="fade-up">
+                   <h2>All Products</h2>
+                </div>
+            </div>
             {loading ? <Loader /> :
                 error ? <Message variant='danger'>{error}</Message> :
                     <Row>

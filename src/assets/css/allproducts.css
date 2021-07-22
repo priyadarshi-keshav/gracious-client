@@ -1,11 +1,39 @@
 .allproductsbanner{
     position: relative;
-    background: url("../allproducts.jpg");
-    opacity: 0.8;
-    background-size: cover;
-    background-position: center;
-    padding: 250px 0px 200px;
-    color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
+.allproductsbanner img{
+    width: 100%;
+    /* height: 90vh; */
+    /* opacity: 0.8; */
+}
+
+.allproductsbannerChild {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    padding: 34px;
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+}
+
+
+@media (max-width:768px) {
+    .allproductsbannerChild p {
+        font-size: 0.8em;
+    }
+    .allproductsbannerChild h2 {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width:500px) {
+    .allproductsbannerChild {
+        top: 33%;
+    }
+}

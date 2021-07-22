@@ -19,15 +19,14 @@ const Contact = () => {
         <Fragment>
             <SubHeader />
             <div style={style}>
-                <div className='container' style={{ width: '70%' }}>
+                <div className='container' style={{ width: '70%', marginTop:'60px' }}>
 
                     <h1 className='heading'>Contact Us</h1>
-                    <h4>
+                    <h5>
                         If you have any questions about orders, sizes, new collections, be sure you check out our FAQ page. If your question wasn't answered there, or you want to join our team ? Don't hesitate to drop us a mail.
-                    </h4>
+                    </h5>
 
                     <Row>
-
                         <Col>
                             <Link>
                                 <i style={{ fontSize: '5em', color: 'rgba(213 130 170)' }} className="fas fa-map-marker-alt"></i>
