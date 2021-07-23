@@ -13,9 +13,9 @@ const Home = () => {
         <Fragment>
             <SubHeader />
             <HeroSection />
+            <ChooseCategory />
             <NewArrival />
             <MostViewed />
-            <ChooseCategory />
             <WhyChooseUs />
             <AboutUs />
         </Fragment>

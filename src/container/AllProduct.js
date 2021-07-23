@@ -81,7 +81,7 @@ const AllProduct = () => {
                                                     <Card.Body>
                                                         <Card.Text>{items.name}</Card.Text>
                                                         {
-                                                            items.offerprice ?
+                                                            items.offerprice && items.offerprice < items.price ?
                                                                 <Card.Text>
                                                                     ₹ {items.offerprice}
                                                                     <span style={{ textDecoration: 'line-through' }}>₹ {items.price}</span>

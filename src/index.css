@@ -13,7 +13,7 @@ body {
 
 a:hover{
   text-decoration: none !important;
-  color: rgba(213 130 170) !important;
+  /* color: rgba(213 130 170) !important; */
 }
 
 a{

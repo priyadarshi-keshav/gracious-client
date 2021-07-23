@@ -49,7 +49,7 @@ const MostViewed = () => {
                                                 <Card.Text>{items.name}</Card.Text>
                                                 <Card.Text>Pack of {items.product_details && items.product_details.items_in_pack}</Card.Text>
                                                 {
-                                                    items.offerprice ?
+                                                    items.offerprice && items.offerprice < items.price ?
                                                         <Card.Text>
                                                             ₹ {items.offerprice}
                                                             <span style={{ textDecoration: 'line-through' }}>₹ {items.price}</span>

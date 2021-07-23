@@ -35,6 +35,7 @@ const CheckoutAddress = ({ history }) => {
     }
 
     const handleChange = (e) => {
+        setAddress(address => ({ ...address, [e.target.name]: e.target.value }))
     }
     const pincodeHandler = (e) => {
         setAddress(address => ({ ...address, [e.target.name]: e.target.value }))
@@ -86,14 +87,7 @@ const CheckoutAddress = ({ history }) => {
                                     </Form.Group>
                                 </Col>
                             </Row>
-                            <Row>
-                                <Col>
-                                    <Form.Group>
-                                        <small>Locality*</small>
-                                        <Form.Control required defaultValue={address.locality} name='locality' placeholder='Locality' type='text' onChange={handleChange} />
-                                    </Form.Group>
-                                </Col>
-                            </Row>
+
                             <Row>
                                 <Col>
                                     <Form.Group>
@@ -105,11 +99,20 @@ const CheckoutAddress = ({ history }) => {
                             <Row>
                                 <Col>
                                     <Form.Group>
+                                        <small>Locality*</small>
+                                        <Form.Control required defaultValue={address.locality} name='locality' placeholder='Locality' type='text' onChange={handleChange} />
+                                    </Form.Group>
+                                </Col>
+                                <Col>
+                                    <Form.Group>
                                         <small>Pincode*</small>
                                         <Form.Control required defaultValue={address.pincode} name='pincode' placeholder='Pincode' type='number' onChange={pincodeHandler} />
                                         <small style={{ color: 'red' }}>{pincodeError}</small>
                                     </Form.Group>
                                 </Col>
+                            </Row>
+                            <Row>
+
                                 <Col><Form.Group>
                                     <small>District*</small>
                                     <Form.Control required defaultValue={address.city} name='city' placeholder='City' type='text' onChange={handleChange} disabled /></Form.Group></Col>
@@ -119,7 +122,6 @@ const CheckoutAddress = ({ history }) => {
                             </Row>
 
                             <button className='page_btn' >Save and Proceed</button>
-
                         </Form>
                     </Col>
                 </Row>
