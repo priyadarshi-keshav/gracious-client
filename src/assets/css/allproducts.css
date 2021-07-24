@@ -1,13 +1,14 @@
 .allproductsbanner{
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     height: 85vh;
     overflow: hidden;
 }
 
-/* .allproductsbanner img{
-    width: 100%;
-} */
+.allproductsbanner img{
+    height: 85vh;
+    object-fit: cover;
+}
 
 .allproductsbannerChild {
     display: flex;
@@ -30,17 +31,17 @@
     .allproductsbannerChild h2 {
         font-size: 1.2em;
     }
-}
-
-@media (max-width:500px) {
-    .allproductsbanner {
-        height: 70vh;
-    }
     .allproductsbannerChild {
         top: 43%;
     }
     .allproductsbanner img{
         height: 70vh;
         object-fit: cover;
+    }
+}
+
+@media (max-width:500px) {
+    .allproductsbanner {
+        height: 70vh;
     }
 }

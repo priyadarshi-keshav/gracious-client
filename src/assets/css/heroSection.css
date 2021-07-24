@@ -6,9 +6,10 @@
     /* border: 2px solid red; */
 }
 
-/* .banner img{
-    height: 100%;
-} */
+.banner img{
+    height: 85vh;
+    object-fit: cover;
+}
 
 .bannerChild {
     display: flex;
@@ -35,18 +36,17 @@
     .bannerChild h2 {
         font-size: 1.1em;
     }
-
-}
-
-@media (max-width:500px) {
-    .bannerChild {
-        top: 40%;
-    }
     .banner {
         height: 70vh
     }
     .banner img{
         height: 70vh;
         object-fit: cover;
+    }
+}
+
+@media (max-width:500px) {
+    .bannerChild {
+        top: 40%;
     }
 }
