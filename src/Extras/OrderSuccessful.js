@@ -10,7 +10,7 @@ const OrderSuccessful = ({history}) => {
     const { success, error } = useSelector(state => state.PlaceOrder)
 
     useEffect(() => {
-        if(!success){
+        if(!profile || !success){
             history.push('/')
         }
         return () => {
@@ -32,7 +32,7 @@ const OrderSuccessful = ({history}) => {
             <SubHeader />
             <div style={style}>
                 <i style={{fontSize:'5em', color:'rgba(213 130 170)'}} className="far fa-check-circle"></i>
-                <h4>Hey {profile.firstname} {profile.lastname},</h4>
+                {profile && <h4>Hey {profile.firstname} {profile.lastname},</h4>}
                 <h2>Your Order is Confirmed!</h2>
                 <p>We'll send you a shipping confrmation on your given details as soon as your order ships.</p>
                 <Link to="/profile#myorders">

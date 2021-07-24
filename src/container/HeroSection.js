@@ -29,6 +29,7 @@ const HeroSection = () => {
                         className="d-block w-100"
                         src="/photos/herobackground2.jpg"
                         alt="Second slide"
+                        data-aos="zoom-in"
                     />
                     <div className="bannerChild" data-aos="fade-up">
                         <h2>Shop Regular Scrunchies</h2>
@@ -42,6 +43,7 @@ const HeroSection = () => {
                         className="d-block w-100"
                         src="/photos/herobackground3.jpg"
                         alt="Second slide"
+                        data-aos="zoom-in"
                     />
                     <div className="bannerChild" data-aos="fade-up">
                         <h2>Most Viewed Scrunchies</h2>
