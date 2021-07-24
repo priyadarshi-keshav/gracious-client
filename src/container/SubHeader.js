@@ -50,7 +50,7 @@ const SubHeader = (props) => {
                             <img style={{ width: '50%' }} src="/photos/logo.png" alt="logo" />
                         </Link>
                         <div>
-                            <Link style={{ color: '#3db997' }} className="mobile cartIcon nav-link" to="/cart">
+                            <Link  style={{ color: 'black' }} className="mobile cartIcon nav-link" to="/cart">
                                 <i className="fab fa-opencart"></i>
                                 <small className='cartNum'>{authCartItems.length !== 0 ? authCartItems.length : cartItems.length}</small>
                             </Link>

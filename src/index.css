@@ -16,9 +16,6 @@ a:hover{
   color: rgba(213 130 170) !important;
 }
 
-a{
-  color: grey;
-}
 
 input{
   font-size:18px;
@@ -125,7 +122,5 @@ input:focus{
     font-size: 1.3em;
     width: 100%;
   }
-  .shopNow_btn{
-    padding: 5px 15px;
-  }
+
 }
