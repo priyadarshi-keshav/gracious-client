@@ -27,13 +27,14 @@ const HeroSection = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="/photos/herobackground2.jpg"
+                        // src="/photos/herobackground2.jpg"
+                        src="https://gracious-e-commerce-s3-bucket.s3.ap-south-1.amazonaws.com/b1e7c5519ff69b62781dc148f3916028"
                         alt="Second slide"
                         data-aos="zoom-in"
                     />
                     <div className="bannerChild" data-aos="fade-up">
                         <h2>Shop Regular Scrunchies</h2>
-                        <Link to="/products/60df3d7b1531095e3cdfe34f"><button className="shopNow_btn">
+                        <Link to="/products/60fc5cd6276e192f4721f92e"><button className="shopNow_btn">
                             Shop Now
                         </button></Link>
                     </div>

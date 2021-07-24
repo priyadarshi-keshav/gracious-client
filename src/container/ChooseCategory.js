@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, Image, Col, Row } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategory } from '../action/categoryAction'
 import Loader from '../Extras/Loader'
