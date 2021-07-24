@@ -32,7 +32,7 @@ const MostViewed = () => {
     return (
         <Fragment>
             <Col id="mostViewed" className="justify-content-md-center text-center" data-aos="fade-up" style={{ padding: '20px', textTransform: 'uppercase' }} data-aos-delay="400" >
-                <center><p className='heading'>Most Viewed Products</p></center>
+                <center><p className='heading'>Most Viewed Collection</p></center>
                 {mostViewedLoading ? <Loader /> :
 
                     <Row>

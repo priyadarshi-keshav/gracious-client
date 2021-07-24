@@ -47,8 +47,8 @@ const AllProduct = () => {
             </div>
             {loading ? <Loader /> :
                 error ? <Message variant='danger'>{error}</Message> :
-                    <Row>
-                        <Col md={3}>
+                    <Row style={{margin:'10px'}}>
+                        <Col md={2}>
                             <center><p>Shop</p></center>
 
                             <ul style={{ listStyle: 'none', float: 'left' }}>
@@ -67,7 +67,7 @@ const AllProduct = () => {
                             </ul>
                         </Col>
 
-                        <Col md={9}>
+                        <Col md={10}>
                             <Row>
                                 {
                                     products && products.map((items) => {

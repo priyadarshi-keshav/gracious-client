@@ -31,7 +31,7 @@ const ChooseCategory = () => {
     return (
         <Fragment>
             <Col className="justify-content-md-center text-center" data-aos="fade-up" style={{ padding: '20px', textTransform: 'uppercase' }} data-aos-delay="400" >
-                <center><p className='heading'>Our Category</p></center>
+                <center><p className='heading'>Collection Category</p></center>
                 {categoryLoading ? <Loader /> :
 
                     <Row>
@@ -41,7 +41,7 @@ const ChooseCategory = () => {
                                     <Col xs={6} sm={6} md={6} lg={3} className='overflow category_block1' key={items._id}>
                                         <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em',  width: {width}, overflow: 'hidden' }}>
                                             <Link to={`/products/${items._id}`}>
-                                                <Card.Img variant="top" src={items.category_image} />
+                                                <img className="catImg" variant="top" src={items.category_image} />
                                             </Link>
                                             <Card.Body>
                                                 <Card.Text>{items.category_name}</Card.Text>

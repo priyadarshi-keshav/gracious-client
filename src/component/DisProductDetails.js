@@ -40,7 +40,7 @@ const DisProductDetails = (props) => {
         if (data) {
             return (
                 <Row>
-                    <Col md={6} data-aos="fade-up">
+                    <Col md={6} data-aos="zoom-in">
                         <Carousel>
                             <Carousel.Item>
                                 <img
@@ -50,14 +50,25 @@ const DisProductDetails = (props) => {
                                 />
 
                             </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src={data.image2}
-                                    alt="Second slide"
-                                />
-                            </Carousel.Item>
 
+                            {data.image2 &&
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100"
+                                        src={data.image2}
+                                        alt="Second slide"
+                                    />
+                                </Carousel.Item>}
+
+                            {data.image3 &&
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100"
+                                        src={data.image3}
+                                        alt="Second slide"
+                                    />
+                                </Carousel.Item>
+                            }
                         </Carousel>
                     </Col>
 
@@ -77,7 +88,7 @@ const DisProductDetails = (props) => {
 
                             <ListGroup.Item>
                                 {
-                                    data.offerprice && data.offerprice < data.price?
+                                    data.offerprice && data.offerprice < data.price ?
                                         <p className='subheading'>
                                             ₹ {data.offerprice}
                                             <p>

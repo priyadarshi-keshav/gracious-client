@@ -44,13 +44,14 @@ const AllProduct = () => {
             <br />
             <br />
             <br />
-            <Col className="justify-content-md-center" data-aos="fade-up" style={{ padding: '20px', textTransform: 'uppercase' }} data-aos-delay="400" >
+            <br />
+            <Col className="justify-content-md-center" data-aos="fade-up" style={{ padding: '20px' }} data-aos-delay="400" >
                 <center><p className='heading'>New Collection</p></center>
 
                 {newArrivalLoading ? <Loader /> :
                     newArrivalError ? <Message variant='danger'>{newArrivalError}</Message> :
-                        <Row>
-                            <Col md={3}>
+                        <Row style={{margin:'10px'}}>
+                            <Col md={2}>
                                 <center><p>Shop</p></center>
 
                                 <ul style={{ listStyle: 'none', float: 'left' }}>
@@ -69,18 +70,18 @@ const AllProduct = () => {
                                 </ul>
                             </Col>
 
-                            <Col md={9}>
+                            <Col md={10}>
                                 <Row>
                                     {
-                                        newArrivalProducts && newArrivalProducts.map((items) => {
+                                        newArrivalProducts && newArrivalProducts.slice(0).reverse().map((items) => {
 
                                             return (
-                                                <Col xs={6} sm={6} md={6} lg={4} className='overflow category_block1' key={items._id}>
+                                                <Col xs={6} sm={6} md={6} lg={4} className='overflow category_block1' key={items._id}  data-aos="zoom-in">
                                                     <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width: { width }, overflow: 'hidden' }}>
                                                         <Link to={`/product_details/${items._id}`}>
                                                             <Card.Img variant="top" src={items.image} />
                                                         </Link>
-                                                        <p style={{ position: 'absolute', top: '0', right: '0', background: 'pink', padding: '5px' }}>New Arrival</p>
+                                                        <p style={{ position: 'absolute', top: '0', right: '0', background: 'pink', padding: '5px' }}>New</p>
                                                         <Card.Body>
                                                             <Card.Text>{items.name}</Card.Text>
                                                             <Card.Text>Pack of {items.product_details && items.product_details.items_in_pack}</Card.Text>

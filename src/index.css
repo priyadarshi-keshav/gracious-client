@@ -30,6 +30,18 @@ input:focus{
   outline: none !important;
 }
 
+img {
+  width: 100%;
+  object-fit: cover !important;
+} 
+
+.catImg { 
+  width: 240px;
+  height: 240px;
+  border-radius: 5px;
+  /* height: 150px; */
+}
+
 .shopNow_btn{
   display: inline-block;
   margin: 1em 0 0;

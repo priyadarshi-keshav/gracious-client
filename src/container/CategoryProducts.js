@@ -46,7 +46,7 @@ const CategoryProducts = ({ match }) => {
         <Fragment>
             <SubHeader />
             <div className="allproductsbanner" >
-                <img src={categoryDetails && categoryDetails.category_image} alt="hero section" data-aos="zoom-in"/>
+                <img src={categoryDetails && categoryDetails.category_image} alt="hero section" data-aos="zoom-in" />
                 <div className="allproductsbannerChild" data-aos="fade-up">
                     <h2>{categoryDetails && categoryDetails.category_name}</h2>
                     <p> {categoryDetails && categoryDetails.category_description}</p>
@@ -54,8 +54,8 @@ const CategoryProducts = ({ match }) => {
             </div>
             {loading ? <Loader /> :
                 error ? <Message variant='danger'>{error}</Message> :
-                    <Row>
-                        <Col md={3}>
+                    <Row style={{ margin: '10px' }}>
+                        <Col md={2}>
                             <center><p>Shop</p></center>
 
                             <ul style={{ listStyle: 'none', float: 'left' }}>
@@ -74,7 +74,7 @@ const CategoryProducts = ({ match }) => {
                             </ul>
                         </Col>
 
-                        <Col md={9}>
+                        <Col md={10}>
                             <Row>
                                 {
                                     productATC && productATC.map((items) => {

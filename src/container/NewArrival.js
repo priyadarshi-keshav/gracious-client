@@ -37,7 +37,7 @@ const OurProduct = () => {
                         <center><p className='heading'>New Collection</p></center>
                         <Row>
                             {
-                                newArrivalProducts && newArrivalProducts.map((items, idx) => {
+                                newArrivalProducts && newArrivalProducts.slice(0).reverse().map((items, idx) => {
                                     if (idx + 1 <= 4) {
 
                                         return (
