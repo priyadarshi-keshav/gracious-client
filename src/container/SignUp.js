@@ -91,7 +91,7 @@ const SignUp = (props) => {
 
             </Form>
 
-            Have an account? <Link to="/login"><Form.Group>Log In</Form.Group></Link>
+            Have an account? <Link style={{color:'black'}}  to="/login"><Form.Group>Log In</Form.Group></Link>
           </div>
 
         </Col>

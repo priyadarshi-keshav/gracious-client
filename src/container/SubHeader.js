@@ -8,6 +8,7 @@ import { withRouter } from 'react-router-dom'
 const SubHeader = (props) => {
 
     const [bgcolor, setBgColor] = useState("")
+    const [textColor, setTextColor] = useState("")
     const [shadow, setShadow] = useState("")
 
     const { cartItems } = useSelector(state => state.Cart)
@@ -45,7 +46,7 @@ const SubHeader = (props) => {
                         </button>
 
                         <Link to="/">
-                            {/* <p style={{ marginTop: '5px', fontSize: '1.5em', color: '#3db997' }}>GraCiousMade</p> */}
+                            {/* <p style={{ marginTop: '5px', fontSize: '2em', color: 'rgba(213 130 170)' }}>GraCiousMade</p> */}
                             <img style={{ width: '50%' }} src="/photos/logo.png" alt="logo" />
                         </Link>
                         <div>
@@ -54,7 +55,7 @@ const SubHeader = (props) => {
                                 <small className='cartNum'>{authCartItems.length !== 0 ? authCartItems.length : cartItems.length}</small>
                             </Link>
 
-                            <Link style={{ color: '#3db997' }} className="mobile cartIcon nav-link" to="/profile">
+                            <Link style={{ color: 'black' }} className="mobile cartIcon nav-link" to="/profile">
                                 <i className="far fa-user"></i>
                             </Link>
                         </div>
@@ -64,21 +65,24 @@ const SubHeader = (props) => {
                         <ul className="navbar-nav ml-lg-auto">
 
                             <li className="nav-item nav-hover">
-                                <Link style={{ color: '#3db997' }} className="nav-link" to="/all_products">Shop</Link>
+                                <Link style={{ color: 'black' }} className="nav-link" to="/all_products">Shop</Link>
                             </li>
                             <li className="nav-item nav-hover">
-                                <Link style={{ color: '#3db997' }} className="nav-link" to="/under_development">FAQ</Link>
+                                <Link style={{ color: 'black' }} className="nav-link" to="/under_development">FAQ</Link>
                             </li>
                             <li className="nav-item nav-hover">
-                                <Link style={{ color: '#3db997' }} className="nav-link" to="/contact">Contact</Link>
+                                <Link style={{ color: 'black' }} className="nav-link" to="/contact">Contact</Link>
+                            </li>
+                            <li className="nav-item nav-hover">
+                                <Link style={{ color: 'black' }} className="nav-link" to="/aboutus">AboutUs</Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link style={{ color: '#3db997' }} className="desktop nav-link" to="/profile" ><i className="far fa-user"></i></Link>
+                                <Link style={{ color: 'black' }} className="desktop nav-link" to="/profile" ><i className="far fa-user"></i></Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link style={{ color: '#3db997' }} className="desktop cartIcon nav-link" to="/cart">
+                                <Link style={{ color: 'black' }} className="desktop cartIcon nav-link" to="/cart">
                                     <i className="fab fa-opencart"></i>
                                     <small className='cartNum'>{authCartItems.length !== 0 ? authCartItems.length : cartItems.length}</small>
                                 </Link>

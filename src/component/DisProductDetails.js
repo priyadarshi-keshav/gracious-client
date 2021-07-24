@@ -77,7 +77,7 @@ const DisProductDetails = (props) => {
 
                             <ListGroup.Item>
                                 {
-                                    data.offerprice ?
+                                    data.offerprice && data.offerprice < data.price?
                                         <p className='subheading'>
                                             ₹ {data.offerprice}
                                             <p>

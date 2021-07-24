@@ -73,7 +73,7 @@ const AllProduct = () => {
                                     products && products.map((items) => {
 
                                         return (
-                                            <Col xs={6} sm={6} md={6} lg={4} className='overflow category_block1' key={items._id} data-aos="fade-up">
+                                            <Col xs={6} sm={6} md={6} lg={4} className='overflow category_block1' key={items._id} data-aos="zoom-in">
                                                 <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width: { width }, overflow: 'hidden' }}>
                                                     <Link to={`/product_details/${items._id}`}>
                                                         <Card.Img variant="top" src={items.image} />

@@ -55,6 +55,7 @@ const UserDashboard = ({ history }) => {
             <br />
             <br />
             <br />
+            <br />
             <Container>
                 <Col style={{ float: 'right' }}>
                     {profile && <p className='subheading'>Hi {profile.firstname}</p>}

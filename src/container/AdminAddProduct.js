@@ -1,5 +1,4 @@
 import React, { useState, Fragment, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form, Row, Col, Spinner } from 'react-bootstrap'
 import { TextField } from '@material-ui/core'
@@ -28,10 +27,14 @@ const AdminAddProduct = ({ history }) => {
         if (profile && profile.role !== "admin") {
             history.push('/')
         }
+        if(product_added){
+            const form = document.getElementById("myForm")
+            form.reset()
+        }
         else {
             dispatch(getCategory())
         }
-    }, [history, dispatch, profile])
+    }, [history, dispatch, profile, product_added])
 
     const handleChange = (e) => {
         setProduct((product => ({ ...product, [e.target.name]: e.target.value })))
@@ -60,12 +63,11 @@ const AdminAddProduct = ({ history }) => {
                         <i className="fas fa-chevron-left"></i>  Back
                     </p>
                     <center><p className='heading'>Publish Product</p></center>
-                    {loading && <Loader />}
                     {error && <Message variant='danger'>{error}</Message>}
                     {product_added && <Message variant='success'>{product_added}</Message>}
 
                     <div>
-                        <Form onSubmit={handleSubmit} style={{ marginTop: '5%' }}>
+                        <Form id="myForm" onSubmit={handleSubmit} style={{ marginTop: '5%' }}>
                             <Form.Group>Product name*
                                 <TextField className="form-control" type="text" name="name" onChange={handleChange} required />
                             </Form.Group>
@@ -82,8 +84,8 @@ const AdminAddProduct = ({ history }) => {
                                     </Form.Group>
                                 </Col>
                                 <Col>
-                                    <Form.Group>Offer Price
-                                        <TextField className="form-control" type="number" name="offerprice" onChange={handleChange}  required /><br />
+                                    <Form.Group>Offer Price*
+                                        <TextField className="form-control" type="number" name="offerprice" onChange={handleChange} required /><br />
                                     </Form.Group>
                                 </Col>
 
@@ -145,7 +147,14 @@ const AdminAddProduct = ({ history }) => {
                                 </Col>
                             </Row>
 
-                            <button className="page_btn" type="submit">PUBLISH</button>
+                            {
+                                loading ? <button className='page_btn'>
+                                    <Spinner animation="border" />
+                                </button>
+                                    :
+                                    <button className="page_btn" type="submit">PUBLISH</button>
+                            }
+
                         </Form>
                     </div>
 

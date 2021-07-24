@@ -79,7 +79,7 @@ const ProductDetails = (props) => {
                             {message && <Message variant="danger">{message}</Message>}
                         </Col>
 
-                        <Col md={8}>
+                        {profile && <Col md={8}>
                             <button style={{ width: '40%', float: 'right' }}
                                 className='page_btn'
                                 onClick={() => {
@@ -116,7 +116,7 @@ const ProductDetails = (props) => {
                                         <button className='page_btn'>Submit</button>
                                 }
                             </Form>}
-                        </Col>
+                        </Col>}
 
                     </Row>
                     <br />

@@ -40,6 +40,7 @@ import CategoryProducts from "../container/CategoryProducts"
 import AdminListActiveOrders from "../container/AdminListActiveOrders"
 import AdminListCompletedOrders from "../container/AdminListCompletedOrders"
 import OrderSuccessful from "../Extras/OrderSuccessful"
+import AboutUs from "../container/AboutUs"
 
 
 
@@ -56,6 +57,7 @@ const Routes = () => {
                 <Route exact path='/' component={Home} />
                 <Route exact path='/contact' component={Contact} />
                 <Route exact path='/faqs' component={FAQs} />
+                <Route exact path='/aboutus' component={AboutUs} />
                 <Route path='/login' component={Login} />
                 <Route path="/account_verify" component={AccountVerify} />
                 <Route path="/signup" component={SignUp} />

@@ -23,16 +23,14 @@ const Footer = () => {
                 <Row className='redirect'>
                     <Link to="/" ><span>HOME</span></Link>
                     <Link to="/all_products"><span>SHOP</span></Link>
-                    <Link to="/contact"><span>CONTACT US</span></Link>
                     <Link to="/under_development"><span>FAQs</span></Link>
+                    <Link to="/contact"><span>CONTACT US</span></Link>
+                    <Link to="/aboutus"><span>ABOUT US</span></Link>
                     <HashLink to="#"><NavigationIcon /></HashLink>
                 </Row>
 
                 <Col className='companyLogo'>
-                    {/* <h1>GraciousMade</h1> */}
                     <img style={{ width: '15%' }} src="/photos/logo.png" alt="logo" />
-                    {/* <small>Welcome to our store</small> */}
-
                 </Col>
 
                 <Col className='copyright'>

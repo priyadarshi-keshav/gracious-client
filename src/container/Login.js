@@ -103,11 +103,11 @@ const Login = (props) => {
 
                 <Form.Group style={form_item}>Password*
                   <TextField className="form-control" type="password" name="password" onChange={handleChange} required /><br />
-                  <p onClick={()=>{setDisplay(!true)}} style={form_btn}>forgot password?</p>
+                  {/* <p onClick={()=>{setDisplay(!true)}} style={form_btn}>forgot password?</p> */}
                 </Form.Group>
 
                 <button className="page_btn" type="submit">Sign In</button>
-                <Link to={redirect === 'checkout_address' ? '/signup?redirect=checkout_address' : `/signup`}>
+                <Link style={{color:'black'}} to={redirect === 'checkout_address' ? '/signup?redirect=checkout_address' : `/signup`}>
                   <Form.Group>Create account</Form.Group>
                 </Link>
               </Form>
