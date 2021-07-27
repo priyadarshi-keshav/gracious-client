@@ -4,7 +4,9 @@ html {
 }
 
 body {
-  font-family: DIN Neuzeit Grotesk !important;
+  /* font-family: DIN Neuzeit Grotesk !important; */
+  /* font-family: Nunito !important; */
+  font-family: Montserrat !important;
   transition: color .2s ease-in-out !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -13,7 +13,7 @@ const HeroSection = () => {
                     <img
                         className="d-block w-100"
                         src="/photos/herobackground.jpg"
-                        alt="First slide"
+                        alt="Handcrafted scrunchies"
                         data-aos="zoom-in"
                     />
                     <div className="bannerChild" data-aos="fade-up">
@@ -29,7 +29,7 @@ const HeroSection = () => {
                         className="d-block w-100"
                         // src="/photos/herobackground2.jpg"
                         src="https://gracious-e-commerce-s3-bucket.s3.ap-south-1.amazonaws.com/b1e7c5519ff69b62781dc148f3916028"
-                        alt="Second slide"
+                        alt="Regular scrunchies"
                         data-aos="zoom-in"
                     />
                     <div className="bannerChild" data-aos="fade-up">
@@ -43,7 +43,7 @@ const HeroSection = () => {
                     <img
                         className="d-block w-100"
                         src="/photos/herobackground3.jpg"
-                        alt="Second slide"
+                        alt="most viewed scrunchies"
                         data-aos="zoom-in"
                     />
                     <div className="bannerChild" data-aos="fade-up">
