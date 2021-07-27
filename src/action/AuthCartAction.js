@@ -205,8 +205,13 @@ export const resetCartMessages = () => (dispatch) => {
         type: RESET_CART_MESSAGES
     })
 }
+
 export const emptyAuthCart = () => (dispatch) => {
     localStorage.removeItem('authCartProducts')
+    localStorage.removeItem('giftwrap')
+    localStorage.removeItem('ordernote')
+    localStorage.removeItem('address')
+    localStorage.removeItem('payment')
     dispatch({
         type: EMPTY_AUTH_CART
     })

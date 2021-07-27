@@ -86,6 +86,18 @@ const OrderDetails = ({ history, match }) => {
 
                                         </ListGroup.Item>
 
+                                        {
+                                            orderDetails.orderNote ?
+                                            <ListGroup.Item>
+                                                <p className='subheading'>Order Note</p>
+
+                                                <p>
+                                                    {orderDetails.orderNote}
+                                                </p>
+                                            </ListGroup.Item>
+                                            :null
+                                        }
+
                                         <ListGroup.Item>
                                             <p className='subheading'>Shipping Address</p>
                                             {
@@ -98,8 +110,7 @@ const OrderDetails = ({ history, match }) => {
 
                                         <ListGroup.Item>
                                             <p className='subheading'>Transaction Details</p>
-                                            <p>RazorPay Payment ID : {orderDetails.paymentResult.razorpay_payment_id}</p>
-                                            <p>{orderDetails.paymentMethod}</p>
+                                            {/* <p>{orderDetails.paymentMethod}</p> */}
                                             <p>Method : {orderDetails.paymentResult.method}</p>
                                             {
                                                 orderDetails.paymentResult.method === 'upi' ?
@@ -141,6 +152,16 @@ const OrderDetails = ({ history, match }) => {
                                                         <Col>₹ {orderDetails.deliveryPrice}</Col>
                                                     </Row>
                                                 </ListGroup.Item>
+
+                                                {orderDetails.giftWrap ?
+                                                    < ListGroup.Item >
+                                                        <Row>
+                                                            <Col>Gift wrap</Col>
+                                                            <Col>₹ {orderDetails.giftWrap && orderDetails.giftWrap}</Col>
+                                                        </Row>
+                                                    </ListGroup.Item>
+                                                    :null
+                                                }
 
                                                 <ListGroup.Item>
                                                     <Row>
@@ -198,7 +219,7 @@ const OrderDetails = ({ history, match }) => {
                                                 </Card.Header>
                                                 <Card.Body>
                                                     {/* <p className='form-control' disabled>update soon</p> */}
-                                                    <a style={{color:'black'}} href={`mailto:support@graciousmade.in`}>support@graciousmade.in</a>
+                                                    <a style={{ color: 'black' }} href={`mailto:support@graciousmade.in`}>support@graciousmade.in</a>
                                                 </Card.Body>
                                             </>
                                         }
@@ -212,7 +233,7 @@ const OrderDetails = ({ history, match }) => {
                 </Row>
             </Container>
 
-        </Fragment>
+        </Fragment >
     )
 }
 

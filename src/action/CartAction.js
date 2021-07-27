@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, SAVE_PAYMENT_METHOD, SAVE_SHIPPING_ADDRESS, EMPTY_CART } from "../constants/CartConstant"
+import { ADD_TO_CART, REMOVE_FROM_CART, SAVE_PAYMENT_METHOD, SAVE_SHIPPING_ADDRESS, EMPTY_CART, SAVE_GIFTWRAP_AMOUNT, SAVE_ORDER_NOTE, RESET_ORDER_NOTE_MESSAGE, GIFTWRAP_SUCCESS } from "../constants/CartConstant"
 
 export const addToCart = (productData, qty) => async (dispatch, getState) => {
 
@@ -45,6 +45,39 @@ export const savePaymentMethod = (payment) => (dispatch) => {
     })
 
     localStorage.setItem('payment', JSON.stringify(payment))
+}
+
+export const saveGiftWrapSuccess = (boolValue) => (dispatch) => {
+    dispatch({
+        type: GIFTWRAP_SUCCESS,
+        payload: boolValue
+    })
+
+    localStorage.setItem('giftwrapsuccess', JSON.stringify(boolValue))
+}
+
+export const saveGiftWrapAmount = (giftWrapAmount) => (dispatch) => {
+    dispatch({
+        type: SAVE_GIFTWRAP_AMOUNT,
+        payload: giftWrapAmount
+    })
+
+    localStorage.setItem('giftwrap', JSON.stringify(giftWrapAmount))
+}
+
+export const saveOrderNote = (orderNote) => (dispatch) => {
+    dispatch({
+        type: SAVE_ORDER_NOTE,
+        payload: orderNote
+    })
+
+    localStorage.setItem('ordernote', JSON.stringify(orderNote))
+}
+
+export const resetOrderNoteMessage = () => (dispatch) => {
+    dispatch({
+        type: RESET_ORDER_NOTE_MESSAGE,
+    })
 }
 
 export const emptyCart = () => (dispatch) => {

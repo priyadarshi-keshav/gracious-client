@@ -47,7 +47,7 @@ export const razorPayPayment = () => async (dispatch, getState) => {
 
             if (data) {
                 const options = {
-                    key_id: "rzp_test_OySIcjLvv0NCGK",
+                    key_id: process.env.REACT_RAZORPAY_KEY_ID,
                     amount: data.amount,
                     currency: "INR",
                     name: "GraCiousMade",
@@ -58,6 +58,7 @@ export const razorPayPayment = () => async (dispatch, getState) => {
                         const orderData = {
                             orderedBy: UserLogin.profile._id,
                             orderItems: AuthCart.authCartItems,
+                            orderNote: Cart.orderNote,
                             shippingAddress: Cart.shippingAddress,
                             paymentMethod: 'RazorPay',
                             paymentResult: {
@@ -67,6 +68,7 @@ export const razorPayPayment = () => async (dispatch, getState) => {
                             },
                             itemsPrice: AuthCart.itemsPrice,
                             deliveryPrice: AuthCart.deliveryPrice,
+                            giftWrap: Cart.giftWrap,
                             totalPrice: AuthCart.totalPrice
                         }
 

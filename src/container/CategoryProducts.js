@@ -46,7 +46,7 @@ const CategoryProducts = ({ match }) => {
         <Fragment>
             <SubHeader />
             <div className="allproductsbanner" >
-                <img src={categoryDetails && categoryDetails.category_image} alt="hero section" data-aos="zoom-in" />
+                <img src={categoryDetails && categoryDetails.category_image} alt={categoryDetails.category_name} data-aos="zoom-in" />
                 <div className="allproductsbannerChild" data-aos="fade-up">
                     <h2>{categoryDetails && categoryDetails.category_name}</h2>
                     <p> {categoryDetails && categoryDetails.category_description}</p>

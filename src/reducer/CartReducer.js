@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, SAVE_PAYMENT_METHOD, SAVE_SHIPPING_ADDRESS, EMPTY_CART } from "../constants/CartConstant";
+import { ADD_TO_CART, REMOVE_FROM_CART, SAVE_PAYMENT_METHOD, SAVE_SHIPPING_ADDRESS, EMPTY_CART, SAVE_GIFTWRAP_AMOUNT, SAVE_ORDER_NOTE, RESET_ORDER_NOTE_MESSAGE, GIFTWRAP_SUCCESS } from "../constants/CartConstant";
 
 
 
@@ -39,11 +39,15 @@ export const CartReducer = (state = { cartItems: [], shippingAddress: {}, paymen
                     return items._id !== action.payload
                 })
             }
-            
+
         case EMPTY_CART:
             return {
-                ...state,
-                cartItems: []
+                cartItems: [],
+                shippingAddress: null,
+                paymentMethod: null,
+                giftWrap: null,
+                giftWrapSuccess: null,
+                orderNote: null
             }
 
         case SAVE_SHIPPING_ADDRESS:
@@ -58,6 +62,33 @@ export const CartReducer = (state = { cartItems: [], shippingAddress: {}, paymen
             return {
                 ...state,
                 paymentMethod: action.payload
+            }
+
+        case GIFTWRAP_SUCCESS:
+            return {
+                ...state,
+                giftWrapSuccess: action.payload
+            }
+
+        case SAVE_GIFTWRAP_AMOUNT:
+
+            return {
+                ...state,
+                giftWrap: action.payload
+            }
+
+
+        case SAVE_ORDER_NOTE:
+            return {
+                ...state,
+                orderNoteSuccess: true,
+                orderNote: action.payload
+            }
+
+        case RESET_ORDER_NOTE_MESSAGE:
+            return {
+                ...state,
+                orderNoteSuccess: false,
             }
 
         default:

@@ -46,7 +46,7 @@ const DisProductDetails = (props) => {
                                 <img
                                     className="d-block w-100"
                                     src={data.image}
-                                    alt="First slide"
+                                    alt={data.name}
                                 />
 
                             </Carousel.Item>
@@ -56,7 +56,7 @@ const DisProductDetails = (props) => {
                                     <img
                                         className="d-block w-100"
                                         src={data.image2}
-                                        alt="Second slide"
+                                        alt={data.name}
                                     />
                                 </Carousel.Item>}
 
@@ -65,7 +65,7 @@ const DisProductDetails = (props) => {
                                     <img
                                         className="d-block w-100"
                                         src={data.image3}
-                                        alt="Second slide"
+                                        alt={data.name}
                                     />
                                 </Carousel.Item>
                             }

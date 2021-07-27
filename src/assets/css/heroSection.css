@@ -30,17 +30,24 @@
 }
 
 @media (max-width:768px) {
+    /* .banner {
+        height: 70vh
+    }
+    .banner img{
+        height: 70vh;
+        object-fit: cover;
+    } */
+}
+
+@media (max-width:500px) {
+    .bannerChild {
+        top: 40%;
+    }
     .banner {
         height: 70vh
     }
     .banner img{
         height: 70vh;
         object-fit: cover;
-    }
-}
-
-@media (max-width:500px) {
-    .bannerChild {
-        top: 40%;
     }
 }

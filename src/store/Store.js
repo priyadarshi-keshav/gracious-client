@@ -10,12 +10,18 @@ const getAuthItemsFromStorage = localStorage.getItem('authCartProducts') ? JSON.
 const getProfileFromStorage = localStorage.getItem('profile') ? JSON.parse(localStorage.getItem('profile')) : null
 const getShippingAddressFromStorage = localStorage.getItem('address') ? JSON.parse(localStorage.getItem('address')) : null
 const getPaymentMethodFromStorage = localStorage.getItem('payment') ? JSON.parse(localStorage.getItem('payment')) : null
+const getGiftWrapFromStorage = localStorage.getItem('giftwrap') ? JSON.parse(localStorage.getItem('giftwrap')) : null
+const getGiftWrapSuccessFromStorage = localStorage.getItem('giftwrapsuccess') ? JSON.parse(localStorage.getItem('giftwrapsuccess')) : null
+const getOrderNoteFromStorage = localStorage.getItem('ordernote') ? JSON.parse(localStorage.getItem('ordernote')) : null
 
 const initialState = {
     Cart : { 
         cartItems : getItemsFromStorage, 
         shippingAddress : getShippingAddressFromStorage, 
-        paymentMethod:getPaymentMethodFromStorage
+        paymentMethod:getPaymentMethodFromStorage,
+        giftWrap: getGiftWrapFromStorage,
+        giftWrapSuccess: getGiftWrapSuccessFromStorage,
+        orderNote: getOrderNoteFromStorage
     },
     AuthCart : { 
         authCartItems : getAuthItemsFromStorage,
