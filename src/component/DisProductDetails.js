@@ -51,14 +51,23 @@ const DisProductDetails = (props) => {
 
                             </Carousel.Item>
 
-                            {data.image2 &&
+                            {data.image2 ?
                                 <Carousel.Item>
                                     <img
                                         className="d-block w-100"
                                         src={data.image2}
                                         alt={data.name}
                                     />
-                                </Carousel.Item>}
+                                </Carousel.Item>
+                                :
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100"
+                                        src={data.image}
+                                        alt={data.name}
+                                    />
+                                </Carousel.Item>
+                            }
 
                             {data.image3 &&
                                 <Carousel.Item>

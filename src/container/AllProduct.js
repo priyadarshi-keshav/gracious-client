@@ -70,7 +70,7 @@ const AllProduct = () => {
                         <Col md={10}>
                             <Row>
                                 {
-                                    products && products.map((items) => {
+                                    products && products.slice(0).reverse().map((items) => {
 
                                         return (
                                             <Col xs={6} sm={6} md={6} lg={4} className='overflow category_block1' key={items._id} data-aos="zoom-in">
