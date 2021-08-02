@@ -11,7 +11,6 @@ const Contact = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         textAlign: 'center',
-        // backgroundColor: 'beige',
         height: '100vh'
     }
 
@@ -19,23 +18,23 @@ const Contact = () => {
         <Fragment>
             <SubHeader />
             <div style={style}>
-                <div className='container' style={{ width: '70%', marginTop: '60px' }}>
+                <div className='container' style={{ marginTop: '60px' }}>
 
-                    <h1 className='heading'>Contact Us</h1>
-                    <h5>
-                        If you have any questions about orders, sizes, new collections, be sure you check out our FAQ page. If your question wasn't answered there, or you want to join our team ? Don't hesitate to drop us a mail.
-                    </h5>
-                    {/* <Row>
-                        <Col md={5}>
-                            <center><img src="/photos/contactUs.png" /></center>
+                    <Row  className="justify-content-md-center">
+                        <Col md={8}>
+                            <h1 className='heading'>Contact Us</h1>
+                            <p>
+                                If you have any questions about orders, sizes, new collections, be sure you check out our FAQ page. If your question wasn't answered there, or you want to join our team ? Don't hesitate to drop us a mail.
+                            </p>
                         </Col>
-                    </Row> */}
+                    </Row>
+
                     <Row>
                         <Col>
                             <Link>
                                 <i style={{ fontSize: '5em', color: '#3db997' }} className="fas fa-map-marker-alt"></i>
                             </Link>
-                            <br /> 
+                            <br />
                             <h5>Ranchi, Jharkhand, India</h5>
                         </Col>
 

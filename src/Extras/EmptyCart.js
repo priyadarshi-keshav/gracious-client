@@ -7,8 +7,8 @@ const EmptyCart = () => {
 
 
     const updateCardWidth = () => {
-        if(window.innerWidth <= 500){
-            setWidth('100%')
+        if(window.innerWidth <= 600){
+            setWidth('70%')
         }else{
             setWidth('25%')
         }

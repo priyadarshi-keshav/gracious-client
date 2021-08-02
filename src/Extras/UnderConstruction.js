@@ -7,7 +7,7 @@ const UnderConstruction = () => {
 
 
     const updateCardWidth = () => {
-        if(window.innerWidth <= 768){
+        if(window.innerWidth <= 600){
             setWidth('100%')
         }else{
             setWidth('25%')
