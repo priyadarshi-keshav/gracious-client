@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom'
 const SubHeader = (props) => {
 
     const [bgcolor, setBgColor] = useState("")
-    const [textColor, setTextColor] = useState("")
+    const [textColor, setTextColor] = useState("#3db997")
     const [shadow, setShadow] = useState("")
 
     const { cartItems } = useSelector(state => state.Cart)
@@ -65,24 +65,24 @@ const SubHeader = (props) => {
                         <ul className="navbar-nav ml-lg-auto">
 
                             <li className="nav-item nav-hover">
-                                <Link style={{ color: 'black' }} className="nav-link" to="/all_products">Shop</Link>
+                                <Link style={{ color: textColor }} className="nav-link" to="/all_products">Shop</Link>
                             </li>
                             <li className="nav-item nav-hover">
-                                <Link style={{ color: 'black' }} className="nav-link" to="/under_development">FAQ</Link>
+                                <Link style={{ color: textColor }} className="nav-link" to="/under_development">FAQ</Link>
                             </li>
                             <li className="nav-item nav-hover">
-                                <Link style={{ color: 'black' }} className="nav-link" to="/contact">Contact</Link>
+                                <Link style={{ color: textColor }} className="nav-link" to="/contact">Contact</Link>
                             </li>
                             <li className="nav-item nav-hover">
-                                <Link style={{ color: 'black' }} className="nav-link" to="/aboutus">AboutUs</Link>
+                                <Link style={{ color: textColor }} className="nav-link" to="/aboutus">AboutUs</Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link style={{ color: 'black' }} className="desktop nav-link" to="/profile" ><i className="far fa-user"></i></Link>
+                                <Link style={{ color: textColor }} className="desktop nav-link" to="/profile" ><i className="far fa-user"></i></Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link style={{ color: 'black' }} className="desktop cartIcon nav-link" to="/cart">
+                                <Link style={{ color: textColor }} className="desktop cartIcon nav-link" to="/cart">
                                     <i className="fab fa-opencart"></i>
                                     <small className='cartNum'>{authCartItems.length !== 0 ? authCartItems.length : cartItems.length}</small>
                                 </Link>

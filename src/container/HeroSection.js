@@ -12,21 +12,6 @@ const HeroSection = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="/photos/herobackground.jpg"
-                        alt="Handcrafted scrunchies"
-                        data-aos="zoom-in"
-                    />
-                    <div className="bannerChild" data-aos="fade-up">
-                        <h2>Shop handcrafted Scrunchies</h2>
-                        <Link to="/all_products"><button className="shopNow_btn">
-                            Shop Now
-                        </button></Link>
-                    </div>
-
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
                         // src="/photos/herobackground2.jpg"
                         src="https://gracious-e-commerce-s3-bucket.s3.ap-south-1.amazonaws.com/b1e7c5519ff69b62781dc148f3916028"
                         alt="Regular scrunchies"
@@ -38,6 +23,21 @@ const HeroSection = () => {
                             Shop Now
                         </button></Link>
                     </div>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src="/photos/herobackground.jpg"
+                        alt="Handcrafted scrunchies"
+                        data-aos="zoom-in"
+                    />
+                    <div className="bannerChild" data-aos="fade-up">
+                        <h2>Shop handcrafted Scrunchies</h2>
+                        <Link to="/all_products"><button className="shopNow_btn">
+                            Shop Now
+                        </button></Link>
+                    </div>
+
                 </Carousel.Item>
                 <Carousel.Item>
                     <img

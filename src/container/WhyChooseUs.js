@@ -4,13 +4,16 @@ import { Card, Row, Col } from 'react-bootstrap'
 const WhyChooseUs = () => {
 
     const [width, setWidth] = useState('18em')
+    const [height, setHeight] = useState('')
 
 
     const updateCardWidth = () => {
         if(window.innerWidth <= 428){
             setWidth('10em')
+            setHeight('')
         }else{
             setWidth('18em')
+            setHeight('200px')
         }
     }
 
@@ -29,9 +32,9 @@ const WhyChooseUs = () => {
                     <Col  xs={6} sm={6} md={6} lg={3} className='overflow category_block1'>
 
                         <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width:{width}, overflow: 'hidden' }}>
-                            <Card.Img variant="top" src='/photos/packing.png' />
+                            <img style={{height:height}} variant="top" src='/photos/packing.png' />
                             <Card.Body>
-                                <Card.Text>Elegant Packaging</Card.Text>
+                                <Card.Text>Gift Wrap</Card.Text>
                             </Card.Body>
                         </Card>
 
@@ -39,17 +42,7 @@ const WhyChooseUs = () => {
                     <Col  xs={6} sm={6} md={6} lg={3} className='overflow category_block1'>
 
                         <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width:{width}, overflow: 'hidden' }}>
-                            <Card.Img variant="top" src='/photos/customize.png' />
-                            <Card.Body>
-                                <Card.Text>Customization</Card.Text>
-                            </Card.Body>
-                        </Card>
-
-                    </Col>
-                    <Col  xs={6} sm={6} md={6} lg={3} className='overflow category_block1'>
-
-                        <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width:{width}, overflow: 'hidden' }}>
-                            <Card.Img variant="top" src='/photos/quality_product.png' />
+                            <img style={{height:height}} variant="top" src='/photos/quality_product.png' />
                             <Card.Body>
                                 <Card.Text>Best Quality Product</Card.Text>
                             </Card.Body>
@@ -59,9 +52,19 @@ const WhyChooseUs = () => {
                     <Col  xs={6} sm={6} md={6} lg={3} className='overflow category_block1'>
 
                         <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width:{width}, overflow: 'hidden' }}>
-                            <Card.Img variant="top" src='/photos/delivery.png' />
+                            <img style={{height:height}} variant="top" src='/photos/safe_payment.png' />
                             <Card.Body>
-                                <Card.Text>On time Delivery</Card.Text>
+                                <Card.Text>Secure Payment</Card.Text>
+                            </Card.Body>
+                        </Card>
+
+                    </Col>
+                    <Col  xs={6} sm={6} md={6} lg={3} className='overflow category_block1'>
+
+                        <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width:{width}, overflow: 'hidden' }}>
+                            <img style={{height:height}} variant="top" src='/photos/delivery.png' />
+                            <Card.Body>
+                                <Card.Text>Fast Shipping</Card.Text>
                             </Card.Body>
                         </Card>
 
