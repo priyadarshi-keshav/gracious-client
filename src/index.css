@@ -35,14 +35,72 @@ input:focus{
 img {
   width: 100%;
   object-fit: cover !important;
+}
+
+.imageTransition {
+  overflow: hidden;
+}
+
+.imageTransition img {
+  transition: transform 2s;
+  overflow: hidden;
 } 
 
-.catImg { 
-  width: 240px;
-  height: 240px;
-  border-radius: 5px;
-  /* height: 150px; */
+.imageTransition img:hover{
+  transform: scale(1.3);
 }
+/* Choose category starts */
+
+.catContainerMain {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.catContainer{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.catText {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  color: white;
+  text-transform: uppercase;
+}
+
+.catImg { 
+  width: 100%;
+  height: 400px;
+  transition: transform 6s;
+}
+
+.catImg:hover { 
+  transform: scale(1.5);
+  height: 400px;
+}
+
+@media (max-width:768px) {
+  .catText {
+    position: absolute;
+    top: 35%;
+    left: 12%;
+    color: white;
+    text-transform: lowercase;
+  }
+  
+  .catImg { 
+    width: 100%;
+    height: 300px;
+  }
+
+  .catImg:hover { 
+    transform: scale(1.5);
+    height: 300px;
+  }
+}
+/* Choose category ends */
 
 .shopNow_btn{
   display: inline-block;

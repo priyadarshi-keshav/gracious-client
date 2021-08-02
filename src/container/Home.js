@@ -13,8 +13,8 @@ const Home = () => {
         <Fragment>
             <SubHeader />
             <HeroSection />
-            <ChooseCategory />
             <NewArrival />
+            <ChooseCategory />
             <MostViewed />
             <WhyChooseUs />
             <Row>

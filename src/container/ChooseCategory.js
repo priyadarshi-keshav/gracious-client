@@ -7,54 +7,47 @@ import Loader from '../Extras/Loader'
 
 
 const ChooseCategory = () => {
+
     const dispatch = useDispatch()
     const { categoryLoading, categoryError, category } = useSelector(state => state.Category)
-    const [width, setWidth] = useState('18em')
-
-
-    const updateCardWidth = () => {
-        if(window.innerWidth <= 428){
-            setWidth('10em')
-        }else{
-            setWidth('18em')
-        }
-    }
 
     useEffect(() => {
         dispatch(getCategory())
-        window.addEventListener('resize', updateCardWidth)
-        return () => {
-            window.removeEventListener('resize', updateCardWidth)
-        }
     }, [dispatch])
 
     return (
         <Fragment>
-            <Col className="justify-content-md-center text-center" data-aos="fade-up" style={{ padding: '20px', textTransform: 'uppercase' }} data-aos-delay="400" >
-                <center><p className='heading'>Collection Category</p></center>
-                {categoryLoading ? <Loader /> :
+            <center style={{ padding: '20px' }}>
+                <p className='heading' data-aos="fade-up">Shop By Category</p>
+            </center>
 
-                    <Row>
-                        {
-                            category && category.map(items => {
-                                return (
-                                    <Col xs={6} sm={6} md={6} lg={3} className='overflow category_block1' key={items._id}>
-                                        <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em',  width: {width}, overflow: 'hidden' }}>
+            {categoryLoading ? <Loader /> :
+
+                <div className="catContainerMain">
+                    {
+                        category && category.map(items => {
+                            return (
+                                <div key={items._id} className='catContainer' data-aos="fade-up">
+
+                                    <img className="catImg" variant="top" src={items.category_image} />
+
+                                    <div className="catText">
+                                        <center>
                                             <Link to={`/products/${items._id}`}>
-                                                <img className="catImg" variant="top" src={items.category_image} />
+                                                <button className='page_btn'>Shop Now</button>
                                             </Link>
-                                            <Card.Body>
-                                                <Card.Text>{items.category_name}</Card.Text>
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
-                                )
-                            })
-                        }
- 
-                    </Row >
-                }
-            </Col>
+                                            <h4>{items.category_name}</h4>
+                                        </center>
+                                    </div>
+
+                                </div>
+                            )
+                        })
+                    }
+
+                </div >
+            }
+            {/* </Col> */}
         </Fragment>
     )
 }

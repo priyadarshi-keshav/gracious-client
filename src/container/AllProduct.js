@@ -40,14 +40,14 @@ const AllProduct = () => {
         <Fragment>
             <SubHeader />
             <div className="allproductsbanner">
-                <img src="/photos/allproducts.jpg" alt="hero section" data-aos="zoom-in"/>
+                <img src="/photos/allproducts.jpg" alt="hero section" data-aos="zoom-in" />
                 <div className="allproductsbannerChild" data-aos="fade-up">
-                   <h2>All Products</h2>
+                    <h2>All Products</h2>
                 </div>
             </div>
             {loading ? <Loader /> :
                 error ? <Message variant='danger'>{error}</Message> :
-                    <Row style={{margin:'10px'}}>
+                    <Row style={{ margin: '10px' }}>
                         <Col md={2}>
                             <center><p>Shop</p></center>
 
@@ -75,9 +75,11 @@ const AllProduct = () => {
                                         return (
                                             <Col xs={6} sm={6} md={6} lg={4} className='overflow category_block1' key={items._id} data-aos="zoom-in">
                                                 <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width: { width }, overflow: 'hidden' }}>
-                                                    <Link to={`/product_details/${items._id}`}>
-                                                        <Card.Img variant="top" src={items.image} alt={items.name}/>
-                                                    </Link>
+                                                    <div className="imageTransition">
+                                                        <Link to={`/product_details/${items._id}`}>
+                                                            <Card.Img variant="top" src={items.image} alt={items.name} />
+                                                        </Link>
+                                                    </div>
                                                     <Card.Body>
                                                         <Card.Text>{items.name}</Card.Text>
                                                         {

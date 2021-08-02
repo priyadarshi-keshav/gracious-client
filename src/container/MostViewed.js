@@ -32,7 +32,7 @@ const MostViewed = () => {
     return (
         <Fragment>
             <Col id="mostViewed" className="justify-content-md-center text-center" data-aos="fade-up" style={{ padding: '20px', textTransform: 'uppercase' }} data-aos-delay="400" >
-                <center><p className='heading'>Most Viewed Collection</p></center>
+                <center style={{ padding: '20px'}}><p className='heading'>Most Viewed Collection</p></center>
                 {mostViewedLoading ? <Loader /> :
 
                     <Row>
@@ -42,9 +42,11 @@ const MostViewed = () => {
 
                                     <Col xs={6} sm={6} md={6} lg={3} className='overflow category_block1' key={items._id}>
                                         <Card variant='flush' className="border-0 text-center" style={{ lineHeight: '1em', width: { width }, overflow: 'hidden' }}>
-                                            <Link to={`/product_details/${items._id}`}>
-                                                <Card.Img variant="top" src={items.image} alt={items.name}/>
-                                            </Link>
+                                            <div className="imageTransition">
+                                                <Link to={`/product_details/${items._id}`}>
+                                                    <Card.Img variant="top" src={items.image} alt={items.name} />
+                                                </Link>
+                                            </div>
                                             <Card.Body>
                                                 <Card.Text>{items.name}</Card.Text>
                                                 <Card.Text>Pack of {items.product_details && items.product_details.items_in_pack}</Card.Text>
